@@ -1,0 +1,5 @@
+.*/
+!.git/
+src_ref/
+**/__pycache__/
+**/*.pyc
