@@ -1,19 +1,25 @@
 [runlim] version:		2.0.0rc12
-[runlim] host:			LAPTOP-TQ703Q3I
+[runlim] host:			9eb6bbf9a0dc
 [runlim] time limit:		311040000 seconds
-[runlim] real time limit:	10 seconds
-[runlim] space limit:		3780 MB
-[runlim] argv[0]:		/home/wizardap/HCP-SAT/.venv/bin/python
+[runlim] real time limit:	609 seconds
+[runlim] space limit:		128711 MB
+[runlim] argv[0]:		/root/HCP_SAT/.venv/bin/python3
 [runlim] argv[1]:		src/utils/all_cadical/cadical.py
-[runlim] start:			Sat Jun 13 16:11:53 2026
-[runlim] child:			7819
-[runlim] end:			Sat Jun 13 16:11:53 2026
+[runlim] start:			Sat Jun 13 15:44:39 2026
+[runlim] child:			7442
+[runlim] sample:		10.00 time, 10.01 real, 1440 MB, 9.11 load
+[runlim] sample:		20.00 time, 20.01 real, 2730 MB, 9.09 load
+[runlim] sample:		30.00 time, 30.01 real, 292 MB, 9.08 load
+[runlim] sample:		40.00 time, 40.01 real, 292 MB, 9.06 load
+[runlim] sample:		50.00 time, 50.01 real, 292 MB, 9.13 load
+[runlim] sample:		60.00 time, 60.01 real, 1229 MB, 9.11 load
+[runlim] end:			Sat Jun 13 15:45:40 2026
 [runlim] status:		ok
 [runlim] result:		0
 [runlim] children:		1
 [runlim] processes:		2
-[runlim] real:			0.12 seconds
-[runlim] time:			0.10 seconds
-[runlim] space:			20 MB
-[runlim] load:			0.70 maximum
-[runlim] samples:		2
+[runlim] real:			60.93 seconds
+[runlim] time:			60.87 seconds
+[runlim] space:			2768 MB
+[runlim] load:			9.14 maximum
+[runlim] samples:		610
