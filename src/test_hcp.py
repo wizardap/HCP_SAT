@@ -38,6 +38,7 @@ def main():
     parser.add_argument("-d", "--data", type=str, default="src/data/fhcpcs", help="Folder containing graph instances (default: src/data/fhcpcs)")
     parser.add_argument("--solver", choices=["glucose", "cadical"], default="glucose", help="Solver backend (default: glucose)")
     parser.add_argument("-l", "--log", type=str, default="log-file.txt", help="Path to log file (default: log-file.txt)")
+    parser.add_argument("--cycle", type=int, default=None, help="CRT cycle limit override")
 
     args = parser.parse_args()
     successor_type = args.successor
@@ -96,13 +97,13 @@ def main():
         elif successor_type == "lfsr":
             successor = LFSR()
         elif successor_type == "crt":
-            successor = CRT()
+            successor = CRT(cycle=args.cycle)
         elif successor_type == "inc_crt":
-            successor = IncCRT()
+            successor = IncCRT(cycle=args.cycle if args.cycle is not None else 12)
         elif successor_type == "ocrt":
-            successor = OCRT(vee_encoder=NSCEncoding(), crt_encoder=encoder)
+            successor = OCRT(vee_encoder=NSCEncoding(), crt_encoder=encoder, cycle=args.cycle)
         elif successor_type == "inc_ocrt":
-            successor = IncOCRT(vee_encoder=NSCEncoding(), crt_encoder=encoder)
+            successor = IncOCRT(vee_encoder=NSCEncoding(), crt_encoder=encoder, cycle=args.cycle if args.cycle is not None else 12)
         elif successor_type == "binary_adder_original":
             successor = BinaryAdderOriginal()
         elif successor_type == "vee":
