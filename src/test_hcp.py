@@ -24,6 +24,7 @@ from libs.models.successor.binary_adder_original import BinaryAdderOriginal
 from libs.models.successor.crt import CRT
 from libs.models.successor.vee import Vee
 from libs.models.successor.inc_crt import IncCRT
+from libs.models.successor.ocrt import OCRT
 from libs.models.successor.inc_ocrt import IncOCRT
 
 from libs.utils.common import get_files_from_folder
@@ -32,7 +33,7 @@ from solver import HcpSolver, IncHcpSolver
 
 def main():
     parser = argparse.ArgumentParser(description="Solve Hamiltonian Cycle Problem (HCP) using SAT Encodings.")
-    parser.add_argument("-s", "--successor", choices=["unary", "lfsr", "binary_adder", "binary_adder_original", "crt", "vee", "inc_crt", "inc_ocrt"], default="binary_adder", help="Successor method to use (default: binary_adder)")
+    parser.add_argument("-s", "--successor", choices=["unary", "lfsr", "binary_adder", "binary_adder_original", "crt", "vee", "ocrt", "inc_crt", "inc_ocrt"], default="binary_adder", help="Successor method to use (default: binary_adder)")
     parser.add_argument("-e", "--encoder", choices=["bimander", "binomial", "binary", "commander", "product", "sequential", "hybrid", "pblib", "scl", "heule"], default="bimander", help="Polymorphic encoder to use (default: bimander)")
     parser.add_argument("-d", "--data", type=str, default="src/data/fhcpcs", help="Folder containing graph instances (default: src/data/fhcpcs)")
     parser.add_argument("--solver", choices=["glucose", "cadical"], default="glucose", help="Solver backend (default: glucose)")
@@ -98,6 +99,8 @@ def main():
             successor = CRT()
         elif successor_type == "inc_crt":
             successor = IncCRT()
+        elif successor_type == "ocrt":
+            successor = OCRT(vee_encoder=NSCEncoding(), crt_encoder=encoder)
         elif successor_type == "inc_ocrt":
             successor = IncOCRT(vee_encoder=NSCEncoding(), crt_encoder=encoder)
         elif successor_type == "binary_adder_original":
