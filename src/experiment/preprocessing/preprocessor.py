@@ -1,4 +1,5 @@
 import time
+import sys
 from dataclasses import dataclass, field
 from libs.utils.graph import Graph
 
@@ -25,6 +26,9 @@ class HCPPreprocessor:
         start_time = time.time()
         n = original_graph.v
         is_directed = original_graph.is_directed
+        
+        # Ensure Python recursion limit is large enough for deep DFS on large graphs
+        sys.setrecursionlimit(max(sys.getrecursionlimit(), n * 2 + 1000))
         
         # Build local representation of active adjacency list
         # Undirected: adj[u] = set of neighbors
