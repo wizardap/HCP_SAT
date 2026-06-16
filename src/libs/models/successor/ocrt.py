@@ -17,11 +17,19 @@ class OCRT(SuccessorMethod):
     """
     Hybrid VEE + CRT Successor Encoding for Hamiltonian Cycle Problem.
     """
-    def __init__(self, vee_encoder=None, crt_encoder=None, cycle=None):
+    def __init__(self, vee_encoder=None, crt_encoder=None, cycle=None,
+                 vee_max_degree=None, vee_heuristic="min-degree",
+                 vee_encoder_type="nsc", vee_clause_budget=None,
+                 start_node_strategy="lowest-degree"):
         super().__init__(encoder=None)
         self.vee_encoder = vee_encoder
         self.crt_encoder = crt_encoder
         self.cycle_override = cycle
+        self.vee_max_degree = vee_max_degree
+        self.vee_heuristic = vee_heuristic
+        self.vee_encoder_type = vee_encoder_type
+        self.vee_clause_budget = vee_clause_budget
+        self.start_node_strategy = start_node_strategy
         self.H = {}          # (u, w) -> active variable
         self.original_H = {} # (u, w) -> original step 0 variable
         self.V = {}          # v -> vertex variable
@@ -447,9 +455,16 @@ class OCRT(SuccessorMethod):
         active_edges = {u: set(graph.graph[u]) for u in range(1, n + 1)}
 
         # Setup encoders
-        if self.vee_encoder is None:
-            from libs.encodings.cardinality_one.scl import NSCEncoding
-            self.vee_encoder = NSCEncoding()
+        if self.vee_encoder is None or (self.vee_encoder_type != "nsc" and self.vee_encoder.__class__.__name__ in ("NSCEncoding", "NSCEncoder")):
+            if self.vee_encoder_type == "pairwise":
+                from libs.encodings.cardinality_one.binomial import BinomialEncoder
+                self.vee_encoder = BinomialEncoder()
+            elif self.vee_encoder_type == "adaptive":
+                from libs.encodings.cardinality_one.adaptive import AdaptiveEncoder
+                self.vee_encoder = AdaptiveEncoder()
+            else:
+                from libs.encodings.cardinality_one.scl import NSCEncoding
+                self.vee_encoder = NSCEncoding()
             
         if self.crt_encoder is None:
             if self.encoder is not None:
@@ -464,6 +479,7 @@ class OCRT(SuccessorMethod):
 
         # 2. Sequential Elimination Loop (Phase 1 VEE)
         sigma = 0
+        cumulative_clause_delta = 0
         while True:
             # First, check if VEE has reduced to 3 vertices
             n_prime = len(active_vertices)
@@ -512,18 +528,38 @@ class OCRT(SuccessorMethod):
                 # Sparsity condition false -> break VEE, proceed to Phase 2 CRT
                 break
 
-            # Find vertex v with minimum degree (out-degree + in-degree)
+            # Find vertex v with minimum degree (out-degree + in-degree) or minimum fill
             v = None
-            min_deg = float('inf')
-            for u in active_vertices:
-                deg = len(active_edges[u]) + len(in_adj[u])
-                if deg < min_deg:
-                    min_deg = deg
-                    v = u
+            if self.vee_heuristic == "min-fill":
+                # Only compute fill for vertices with degree <= min_degree + 2 to avoid performance bottleneck on large graphs
+                deg_list = [(u, len(active_edges[u]) + len(in_adj[u])) for u in active_vertices]
+                min_deg = min(d for _, d in deg_list)
+                candidates = [u for u, d in deg_list if d <= min_deg + 2]
+                
+                def count_fill(candidate):
+                    fill = 0
+                    for u in in_adj[candidate]:
+                        for w in active_edges[candidate]:
+                            if u != w and w not in active_edges[u]:
+                                fill += 1
+                    return fill
+                v = min(candidates, key=lambda u: (count_fill(u), len(active_edges[u]) + len(in_adj[u])))
+            else:
+                v = min(active_vertices, key=lambda u: len(active_edges[u]) + len(in_adj[u]))
 
             if v is None:
                 self.add_clause([])
                 return self.context
+
+            # Check degree cap on max(in-degree, out-degree)
+            if self.vee_max_degree is not None:
+                deg_in = len(in_adj[v])
+                deg_out = len(active_edges[v])
+                if max(deg_in, deg_out) > self.vee_max_degree:
+                    break
+
+            # Record clause count before elimination
+            clauses_before = self.context.total_clauses()
 
             # Outgoing active edges from v:
             outgoing_edges = [(v, w) for w in active_edges[v]]
@@ -611,6 +647,11 @@ class OCRT(SuccessorMethod):
             active_edges = next_active_edges
             sigma += 1
 
+            clauses_after = self.context.total_clauses()
+            cumulative_clause_delta += (clauses_after - clauses_before)
+            if self.vee_clause_budget is not None and cumulative_clause_delta > self.vee_clause_budget:
+                break
+
         # Phase 2: CRT Encoding on remaining graph
         n_prime = len(active_vertices)
         print(f"[OCRT] VEE Phase 1 complete. Eliminated: {sigma} vertices. Remaining (n_prime): {n_prime} vertices.")
@@ -636,8 +677,16 @@ class OCRT(SuccessorMethod):
             self.add_clause([])
             return self.context
 
-        # Starting vertex: min out-degree vertex in active_vertices
-        first = min(active_vertices, key=lambda v: len(active_edges[v]))
+        # Starting vertex selection based on start_node_strategy
+        if self.start_node_strategy == "first":
+            # Select smallest vertex index in active_vertices
+            first = min(active_vertices)
+        elif self.start_node_strategy == "highest-degree":
+            # Select vertex with highest out-degree in active_vertices
+            first = max(active_vertices, key=lambda u: len(active_edges[u]))
+        else: # lowest-degree (default)
+            # Select vertex with lowest out-degree in active_vertices
+            first = min(active_vertices, key=lambda u: len(active_edges[u]))
 
         cycle, nBits = self.get_cycle_and_nbits(n_prime)
 

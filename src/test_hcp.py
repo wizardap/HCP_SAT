@@ -26,6 +26,8 @@ from libs.models.successor.vee import Vee
 from libs.models.successor.inc_crt import IncCRT
 from libs.models.successor.ocrt import OCRT
 from libs.models.successor.inc_ocrt import IncOCRT
+from libs.models.successor.vccrt import VCCRT
+from experiment.preprocessing.crt_preprocessed import CRTPreprocessed
 
 from libs.utils.common import get_files_from_folder
 from solver import HcpSolver, IncHcpSolver
@@ -33,12 +35,20 @@ from solver import HcpSolver, IncHcpSolver
 
 def main():
     parser = argparse.ArgumentParser(description="Solve Hamiltonian Cycle Problem (HCP) using SAT Encodings.")
-    parser.add_argument("-s", "--successor", choices=["unary", "lfsr", "binary_adder", "binary_adder_original", "crt", "vee", "ocrt", "inc_crt", "inc_ocrt"], default="binary_adder", help="Successor method to use (default: binary_adder)")
+    parser.add_argument("-s", "--successor", choices=["unary", "lfsr", "binary_adder", "binary_adder_original", "crt", "vee", "ocrt", "inc_crt", "inc_ocrt", "crt_preprocessed", "vccrt", "vccrt_preprocessed"], default="binary_adder", help="Successor method to use (default: binary_adder)")
     parser.add_argument("-e", "--encoder", choices=["bimander", "binomial", "binary", "commander", "product", "sequential", "hybrid", "pblib", "scl", "heule"], default="bimander", help="Polymorphic encoder to use (default: bimander)")
     parser.add_argument("-d", "--data", type=str, default="src/data/fhcpcs", help="Folder containing graph instances (default: src/data/fhcpcs)")
     parser.add_argument("--solver", choices=["glucose", "cadical"], default="glucose", help="Solver backend (default: glucose)")
     parser.add_argument("-l", "--log", type=str, default="log-file.txt", help="Path to log file (default: log-file.txt)")
     parser.add_argument("--cycle", type=int, default=None, help="CRT cycle limit override")
+    parser.add_argument("--start-node", choices=["first", "highest-degree", "lowest-degree"], default="lowest-degree", help="Strategy to select the starting node (default: lowest-degree)")
+    parser.add_argument("--vee-max-degree", type=int, default=None, help="Maximum vertex degree to eliminate in VEE phase (default: None)")
+    parser.add_argument("--vee-heuristic", choices=["min-degree", "min-fill"], default="min-degree", help="Heuristic for selecting vertices to eliminate (default: min-degree)")
+    parser.add_argument("--vee-encoder", choices=["nsc", "pairwise", "adaptive"], default="nsc", help="Cardinality encoder to use for VEE constraints (default: nsc)")
+    parser.add_argument("--vee-clause-budget", type=int, default=None, help="Maximum cumulative net clauses allowed in VEE phase before breaking (default: None)")
+    parser.add_argument("--no-probing", action="store_true", help="Disable probing in preprocessor")
+    parser.add_argument("--no-contraction", action="store_true", help="Disable contraction in preprocessor")
+    parser.add_argument("--no-2cut", action="store_true", help="Disable 2-edge-cut in preprocessor")
 
     args = parser.parse_args()
     successor_type = args.successor
@@ -101,9 +111,46 @@ def main():
         elif successor_type == "inc_crt":
             successor = IncCRT(cycle=args.cycle if args.cycle is not None else 12)
         elif successor_type == "ocrt":
-            successor = OCRT(vee_encoder=NSCEncoding(), crt_encoder=encoder, cycle=args.cycle)
+            successor = OCRT(
+                vee_encoder=None, 
+                crt_encoder=encoder, 
+                cycle=args.cycle,
+                vee_max_degree=args.vee_max_degree,
+                vee_heuristic=args.vee_heuristic,
+                vee_encoder_type=args.vee_encoder,
+                vee_clause_budget=args.vee_clause_budget,
+                start_node_strategy=args.start_node
+            )
         elif successor_type == "inc_ocrt":
-            successor = IncOCRT(vee_encoder=NSCEncoding(), crt_encoder=encoder, cycle=args.cycle if args.cycle is not None else 12)
+            successor = IncOCRT(
+                vee_encoder=None, 
+                crt_encoder=encoder, 
+                cycle=args.cycle if args.cycle is not None else 12,
+                vee_max_degree=args.vee_max_degree,
+                vee_heuristic=args.vee_heuristic,
+                vee_encoder_type=args.vee_encoder,
+                vee_clause_budget=args.vee_clause_budget,
+                start_node_strategy=args.start_node
+            )
+        elif successor_type == "crt_preprocessed":
+            successor = CRTPreprocessed(
+                encoder,
+                cycle=args.cycle,
+                enable_probing=not args.no_probing,
+                enable_contraction=not args.no_contraction,
+                enable_2cut=not args.no_2cut
+            )
+        elif successor_type == "vccrt":
+            successor = VCCRT(encoder, cycle=args.cycle)
+        elif successor_type == "vccrt_preprocessed":
+            successor = CRTPreprocessed(
+                encoder,
+                crt_class=VCCRT,
+                cycle=args.cycle,
+                enable_probing=not args.no_probing,
+                enable_contraction=not args.no_contraction,
+                enable_2cut=not args.no_2cut
+            )
         elif successor_type == "binary_adder_original":
             successor = BinaryAdderOriginal()
         elif successor_type == "vee":
@@ -117,6 +164,16 @@ def main():
         else:
             hcpSolver = HcpSolver(successor, encoder)
         hcpSolver.graph.load_graph_from_file(path)
+        
+        # Determine and set starting node based on selection strategy
+        if args.start_node == "first":
+            start_v = 1
+        elif args.start_node == "highest-degree":
+            start_v = max(hcpSolver.graph.graph.keys(), key=lambda v: len(hcpSolver.graph.graph[v]))
+        else: # lowest-degree
+            start_v = min(hcpSolver.graph.graph.keys(), key=lambda v: len(hcpSolver.graph.graph[v]))
+            
+        hcpSolver.graph.set_start_vertex(start_v)
 
         # 5. Solve
         if solver_backend == "glucose":
