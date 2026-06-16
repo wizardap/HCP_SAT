@@ -27,3 +27,4 @@ graph48.hcp                    6258       53965      SAT         97.377     vali
 graph48.hcp                    6981       58008      SAT         118.696    valid     
 graph171.hcp                   16266      136895     SAT         24.435     valid     
 graph1.hcp                     5676       10348      SAT         0.137      valid     
+graph252.hcp                   2493192    2695994    SAT         24.786     valid     
