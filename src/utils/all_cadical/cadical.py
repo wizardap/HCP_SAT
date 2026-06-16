@@ -6,6 +6,13 @@ from pysat.solvers import Solver, Cadical195
 import time
 
 sat_solver: Solver = Cadical195()
+# Tune CaDiCaL's internal preprocessing options for optimal performance
+sat_solver.configure({
+    "preprocessing": 1,
+    "probe": 1,
+    "subsume": 1,
+    "vivify": 1
+})
 
 with open("src/utils/all_cadical/input.txt", 'r') as lines:
     for line in lines:
