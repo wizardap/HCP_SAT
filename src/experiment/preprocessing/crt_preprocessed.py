@@ -8,11 +8,13 @@ class CRTPreprocessed(SuccessorMethod):
     Experimental preprocessed CRT successor encoding.
     It runs the HCPPreprocessor graph-level preprocessing before building the CRT clauses.
     """
-    def __init__(self, encoder=None, cycle=None, enable_probing=True, max_probing_edges=300):
+    def __init__(self, encoder=None, cycle=None, enable_probing=True, max_probing_edges=300, enable_contraction=True, enable_2cut=True):
         super().__init__(encoder)
         self.cycle_override = cycle
         self.enable_probing = enable_probing
         self.max_probing_edges = max_probing_edges
+        self.enable_contraction = enable_contraction
+        self.enable_2cut = enable_2cut
         
         self.H = {}  # maps original (i, j) -> SAT variable
         self._forbidden_var = None
@@ -81,7 +83,9 @@ class CRTPreprocessed(SuccessorMethod):
         # 1. Run Preprocessor
         preprocessor = HCPPreprocessor(
             enable_probing=self.enable_probing,
-            max_probing_edges=self.max_probing_edges
+            max_probing_edges=self.max_probing_edges,
+            enable_contraction=self.enable_contraction,
+            enable_2cut=self.enable_2cut
         )
         self.preprocess_result = preprocessor.preprocess(graph)
         

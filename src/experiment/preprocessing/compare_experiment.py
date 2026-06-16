@@ -75,7 +75,9 @@ def run_comparison(graph_path, solver_name, enable_probing=True):
     # Successor configurations
     configs = [
         ("CRT (Baseline)", lambda enc: CRT(enc)),
-        ("CRT (Preprocessed)", lambda enc: CRTPreprocessed(enc, enable_probing=enable_probing)),
+        ("CRT (P1: Cascade only)", lambda enc: CRTPreprocessed(enc, enable_probing=False, enable_contraction=False, enable_2cut=False)),
+        ("CRT (P1+P2: Contraction)", lambda enc: CRTPreprocessed(enc, enable_probing=False, enable_contraction=True, enable_2cut=True)),
+        ("CRT (P1+P2+P3: Probing)", lambda enc: CRTPreprocessed(enc, enable_probing=enable_probing, enable_contraction=True, enable_2cut=True)),
     ]
 
     results = []

@@ -15,9 +15,11 @@ class PreprocessResult:
 
 
 class HCPPreprocessor:
-    def __init__(self, enable_probing=True, max_probing_edges=300):
+    def __init__(self, enable_probing=True, max_probing_edges=300, enable_contraction=True, enable_2cut=True):
         self.enable_probing = enable_probing
         self.max_probing_edges = max_probing_edges
+        self.enable_contraction = enable_contraction
+        self.enable_2cut = enable_2cut
 
     def preprocess(self, original_graph: Graph) -> PreprocessResult:
         start_time = time.time()
@@ -74,7 +76,7 @@ class HCPPreprocessor:
                         return PreprocessResult(graph=original_graph, is_unsat=True, stats={"time": time.time() - start_time})
                         
                 # 2-Edge-Cut Detection (if graph is small enough, e.g. V < 300)
-                if n < 300:
+                if self.enable_2cut and n < 300:
                     cuts = self._find_2_edge_cuts(n, adj, forced, forbidden)
                     if cuts:
                         for u, v in cuts:
@@ -155,56 +157,57 @@ class HCPPreprocessor:
             if not is_directed:
                 forced_adj[v].add(u)
                 
-        # Find chains
-        visited = set()
-        for start in range(1, n + 1):
-            if start in visited or start in removed_vertices:
-                continue
-                
-            # We look for a vertex with forced degree == 1 or 2 (to trace a path)
-            # A vertex is a good endpoint for a path contraction if it has degree > 2 (or in-deg/out-deg > 1)
-            # but connects to a degree 2 vertex.
-            active_neighbors = {v for v in adj[start] if norm_edge(start, v) not in forbidden}
-            if len(active_neighbors) <= 2:
-                # This vertex is part of a chain, we will visit it when we start from an endpoint,
-                # or it's a isolated cycle (which we will handle)
-                continue
-                
-            # For each neighbor of start, if it has forced degree == 2 (meaning it is a middle node of a path)
-            for neigh in list(forced_adj[start]):
-                if neigh in visited or neigh in removed_vertices:
+        if self.enable_contraction:
+            # Find chains
+            visited = set()
+            for start in range(1, n + 1):
+                if start in visited or start in removed_vertices:
                     continue
-                neigh_active = {v for v in adj[neigh] if norm_edge(neigh, v) not in forbidden}
-                if len(neigh_active) == 2:
-                    # Trace path starting: start -> neigh -> ...
-                    path = [start, neigh]
-                    visited.add(neigh)
-                    curr = neigh
-                    prev = start
                     
-                    while True:
-                        # Find next node in forced path
-                        next_nodes = [v for v in forced_adj[curr] if v != prev]
-                        if not next_nodes:
-                            break
-                        next_node = next_nodes[0]
-                        next_active = {v for v in adj[next_node] if norm_edge(next_node, v) not in forbidden}
+                # We look for a vertex with forced degree == 1 or 2 (to trace a path)
+                # A vertex is a good endpoint for a path contraction if it has degree > 2 (or in-deg/out-deg > 1)
+                # but connects to a degree 2 vertex.
+                active_neighbors = {v for v in adj[start] if norm_edge(start, v) not in forbidden}
+                if len(active_neighbors) <= 2:
+                    # This vertex is part of a chain, we will visit it when we start from an endpoint,
+                    # or it's a isolated cycle (which we will handle)
+                    continue
+                    
+                # For each neighbor of start, if it has forced degree == 2 (meaning it is a middle node of a path)
+                for neigh in list(forced_adj[start]):
+                    if neigh in visited or neigh in removed_vertices:
+                        continue
+                    neigh_active = {v for v in adj[neigh] if norm_edge(neigh, v) not in forbidden}
+                    if len(neigh_active) == 2:
+                        # Trace path starting: start -> neigh -> ...
+                        path = [start, neigh]
+                        visited.add(neigh)
+                        curr = neigh
+                        prev = start
                         
-                        if len(next_active) == 2:
-                            path.append(next_node)
-                            visited.add(next_node)
-                            prev = curr
-                            curr = next_node
-                        else:
-                            path.append(next_node)
-                            break
+                        while True:
+                            # Find next node in forced path
+                            next_nodes = [v for v in forced_adj[curr] if v != prev]
+                            if not next_nodes:
+                                break
+                            next_node = next_nodes[0]
+                            next_active = {v for v in adj[next_node] if norm_edge(next_node, v) not in forbidden}
                             
-                    if len(path) >= 3:
-                        # Contract path: path[0] -> path[-1]
-                        u, v = path[0], path[-1]
-                        contracted_paths[norm_edge(u, v)] = path
-                        for w in path[1:-1]:
-                            removed_vertices.add(w)
+                            if len(next_active) == 2:
+                                path.append(next_node)
+                                visited.add(next_node)
+                                prev = curr
+                                curr = next_node
+                            else:
+                                path.append(next_node)
+                                break
+                                
+                        if len(path) >= 3:
+                            # Contract path: path[0] -> path[-1]
+                            u, v = path[0], path[-1]
+                            contracted_paths[norm_edge(u, v)] = path
+                            for w in path[1:-1]:
+                                removed_vertices.add(w)
 
         # Check for sub-cycle in forced edges
         # If any forced path forms a cycle of size < n, then it's UNSAT
