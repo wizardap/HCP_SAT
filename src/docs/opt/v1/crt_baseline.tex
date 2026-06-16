@@ -1,0 +1,54 @@
+\section{CRT Baseline Approach}
+\label{sec:crt_baseline}
+
+\subsection{Overview}
+The \textbf{CRT Baseline} approach is the fundamental formulation of the Hamiltonian Cycle Problem (HCP) encoding utilizing the Chinese Remainder Theorem (CRT).
+Instead of tracking the absolute integer position $1 \ldots N$ of each vertex in the cycle (which requires $O(N^2)$ binary variables in the Unary representation), the CRT encoding represents the position modulo a set of pairwise coprime integers $m_1, m_2, \dots, m_k$ such that the product $M = \prod_{i=1}^k m_i \ge N$.
+This configuration does not employ any graph-level preprocessing, and uses the \texttt{PbLibEncoder} library to generate cardinality constraints.
+
+\subsection{Mathematical Formulation}
+
+\subsubsection{Decision Variables}
+\begin{enumerate}
+    \item \textbf{Edge Selection Variables ($H_{i,j}$)}: 
+    \begin{equation}
+        H_{i,j} = \begin{cases} 
+        1 & \text{if the directed edge } i \to j \text{ is in the Hamiltonian Cycle} \\
+        0 & \text{otherwise}
+        \end{cases}
+    \end{equation}
+    \item \textbf{Position State Bits ($P_{i,b}$)}:
+    Represents the $b$-th bit of the binary encoding of the position of vertex $i$ modulo the moduli set. The total number of bits per vertex is given by $B = \sum_{r=1}^k \lceil \log_2 m_r \rceil$.
+\end{enumerate}
+
+\subsubsection{Constraints}
+
+\paragraph{Cardinality Constraints (AMO/ALO)}
+To ensure that the selected edges form a set of disjoint cycles spanning all vertices, every vertex must have exactly one outgoing edge and one incoming edge:
+\begin{equation}
+    \sum_{j \in Adj_{out}(i)} H_{i,j} = 1 \quad \forall i \in V
+\end{equation}
+\begin{equation}
+    \sum_{j \in Adj_{in}(i)} H_{j,i} = 1 \quad \forall i \in V
+\end{equation}
+
+\paragraph{Positional Transition Constraints}
+For each edge $i \to j$ in the graph (excluding transition to the start vertex, i.e., $j \neq first$), the position of $j$ must succeed the position of $i$ modulo the coprime moduli:
+\begin{equation}
+    H_{i,j} \implies \left( P_{j} \equiv Succ(P_{i}) \right)
+\end{equation}
+This implication is expanded into CNF clauses relating the edge variable $H_{i,j}$ and the positional bit variables $P_{i,b}$, $P_{j,b}$ for each modulo $m_r$ independently.
+
+\subsection{Algorithm Steps}
+\begin{enumerate}
+    \item \textbf{Moduli Selection}: Choose a coprime set of integers $\{m_1, \dots, m_k\}$ such that their product satisfies $\prod m_r \ge N$.
+    \item \textbf{Variable Declaration}: Define edge variables $H_{i,j}$ for all active edges and state variables $P_{i,b}$ for all vertices.
+    \item \textbf{Cardinality Encoding}: Apply the \texttt{PbLibEncoder} to generate the At-Most-One (AMO) and At-Least-One (ALO) constraints for vertex in-degrees and out-degrees.
+    \item \textbf{Edge-Centric Transition Injection}: Loop over all candidate edges $i \to j$ and emit the logic clauses that enforce $Succ(P_i) = P_j$ when $H_{i,j} = 1$.
+\end{enumerate}
+
+\subsection{Evaluation}
+\begin{itemize}
+    \item \textbf{Advantages}: Reduces the state variables from $O(N^2)$ to $O(N \log N)$ compared to the Unary approach.
+    \item \textbf{Disadvantages}: Since the transition clauses are instantiated for every edge, the total clause count grows as $O(E \log N)$, causing clause explosion in dense graphs (e.g., more than 20.4 million clauses for \texttt{graph162}). No structural simplification is applied prior to SAT encoding.
+\end{itemize}

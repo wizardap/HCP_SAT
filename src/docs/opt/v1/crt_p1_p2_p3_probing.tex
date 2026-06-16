@@ -1,0 +1,56 @@
+\section{CRT Preprocessing Phase 1+2+3: Graph Probing \& Sub-cycle Detection}
+\label{sec:crt_p1_p2_p3_probing}
+
+\subsection{Overview}
+The \textbf{CRT P1+P2+P3} approach utilizes all three phases of graph-level preprocessing, incorporating \textbf{Phase 3: Deep Probing} and \textbf{Sub-cycle Detection}.
+The objective is to reveal hidden logical implications in the graph by temporarily assigning truth values to undecided edge variables, running a local cascade, and detecting contradictions.
+A limit of $\text{max\_probing\_edges} = 300$ is set to restrict the execution overhead on large graph instances.
+
+\subsection{Mathematical \& Logical Formulation}
+
+\subsubsection{Graph-Level Probing}
+For each undecided edge $e = (u,v)$ that is neither currently forced nor forbidden:
+\begin{enumerate}
+    \item \textbf{Negative Probing (Assume $e = 0$)}:
+    Set $e = \text{False}$ (add to the \texttt{forbidden} set) and execute Degree Cascading.
+    If a logical contradiction occurs (e.g., any vertex has $deg_{active} < 2$):
+    \begin{equation}
+        (e = 0 \implies \text{Contradiction}) \implies \text{Force}(e)
+    \end{equation}
+    \item \textbf{Positive Probing (Assume $e = 1$)}:
+    Set $e = \text{True}$ (add to the \texttt{forced} set) and execute Degree Cascading.
+    If a logical contradiction occurs:
+    \begin{equation}
+        (e = 1 \implies \text{Contradiction}) \implies \text{Forbid}(e)
+    \end{equation}
+\end{enumerate}
+
+\subsubsection{Sub-cycle Detection}
+During the cascade triggered by probing:
+\begin{itemize}
+    \item Let $E_{forced}$ denote the set of all currently forced edges.
+    \item If $E_{forced}$ forms a closed cycle connecting $k$ vertices such that $k < N$ (the total number of vertices in the reduced graph), it represents a premature sub-cycle.
+    \item A premature sub-cycle is invalid in a spanning Hamiltonian Cycle and is immediately flagged as a contradiction, triggering the respective implication rule.
+\end{itemize}
+
+\subsection{Algorithm Steps}
+\begin{enumerate}
+    \item Run Phase 1 and Phase 2 preprocessing to reduce the graph.
+    \item Check the active edge count. If the number of undecided active edges is $\le 300$, proceed with probing.
+    \item \textbf{Probing Execution}:
+    For each undecided edge $e$:
+    \begin{enumerate}
+        \item Create a temporary copy of the graph and constraint sets.
+        \item Perform temporary assignment (positive or negative).
+        \item Execute Degree Cascading with Sub-cycle Checking.
+        \item If a contradiction is detected, update the master status of $e$ (Force/Forbid) and restart the fixpoint loop.
+    \end{enumerate}
+    \item Generate the final CRT CNF formula on the preprocessed graph.
+\end{enumerate}
+
+\subsection{Evaluation}
+\begin{itemize}
+    \item \textbf{Empirical Results}: On the \texttt{fhcppp} dataset, the variables and clauses for P1+P2 and P1+P2+P3 are identical. This indicates that probing did not find any additional edge assignments beyond what was already resolved by Cascading and Contraction.
+    \item \textbf{Overhead}: Probing increases the build time slightly (by $0.1$s to $0.5$s depending on graph size) due to repeated graph copying and DFS biconnectivity checking.
+    \item \textbf{Conclusion}: Probing is highly effective on regular degree-3 graphs (cubic graphs like \texttt{fhcpcs}), where forcing or forbidding one edge immediately constrains the remaining edges. It provides less utility on sparser, non-regular graphs found in the \texttt{fhcppp} dataset.
+\end{itemize}

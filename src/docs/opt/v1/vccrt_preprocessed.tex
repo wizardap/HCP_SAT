@@ -1,0 +1,58 @@
+\section{Vertex-Centric CRT with Preprocessing (VCCRT Preprocessed)}
+\label{sec:vccrt_preprocessed}
+
+\subsection{Overview}
+The \textbf{VCCRT Preprocessed} approach represents the most advanced configuration in the HCP-SAT project, combining the vertex-centric successor model (\textbf{Phase 4}) with the full graph-level preprocessing pipeline (\textbf{P1 + P2 + P3}).
+By combining these techniques, the graph structure is simplified first, reducing both the vertex count $N \to N'$ and edge count $E \to E'$.
+Then, the vertex-centric representation is applied only to this minimized structure, leading to a highly compact SAT formula.
+
+\subsection{Mathematical \& Logical Formulation}
+
+\subsubsection{Graph Simplification}
+The original graph $G = (V, E)$ is simplified by the \texttt{HCPPreprocessor} to yield the reduced graph:
+\begin{equation}
+    G' = (V', E') \quad \text{where } |V'| = N' < N, \ |E'| = E' < E
+\end{equation}
+The preprocessor also yields the sets of \texttt{forced\_edges} and \texttt{contracted\_paths}.
+
+\subsubsection{Reduced VCCRT Encoding}
+\begin{enumerate}
+    \item \textbf{Successor Variable Allocation}: Auxiliary successor variables $S_{i,b}$ are only allocated for active vertices in the reduced set $i \in V'$.
+    \item \textbf{Reduced Local Transitions}: Modular successor addition clauses are generated only for the $N'$ reduced vertices:
+    \begin{equation}
+        S_i \equiv Succ(P_i) \quad \forall i \in V'
+    \end{equation}
+    This requires only $N'$ transition constraints, significantly fewer than the $N$ constraints required in the baseline model.
+    \item \textbf{Reduced Copy Constraints}: Equivalent bit-copy clauses are only instantiated for the $E'$ remaining active edges:
+    \begin{equation}
+        H_{i,j} \implies (P_{j,b} \leftrightarrow S_{i,b}) \quad \forall (i,j) \in E'
+    \end{equation}
+    \item \textbf{Unit Clause Insertion}: Edge variables belonging to the \texttt{forced\_edges} and \texttt{contracted\_paths} are forced to True in the SAT solver using unit clauses.
+\end{enumerate}
+
+\subsection{Algorithm Steps}
+\begin{enumerate}
+    \item \textbf{Preprocessing Execution}: Execute Degree Cascading, Path Contraction, Bridge/Cut detection, and Graph Probing in a fixpoint loop.
+    \item \textbf{Reduced Initialization}: 
+    If the preprocessor flags UNSAT $\implies$ terminate immediately.
+    Otherwise, allocate variables $H_{i,j}$, $P_{i,b}$, and $S_{i,b}$ for the reduced graph $G'$.
+    \item \textbf{CNF Construction}:
+    \begin{enumerate}
+        \item Generate $Succ(P_i) = S_i$ constraints for $N'$ vertices.
+        \item Generate copy constraints for $E'$ active edges.
+        \item Inject AMO cardinality constraints on $G'$ using \texttt{PbLibEncoder}.
+        \item Force variables of preassigned edges via unit clauses.
+    \end{enumerate}
+    \item \textbf{Post-processing Expansion}: Once a satisfying assignment is found, reconstruct the full cycle by expanding virtual edges from \texttt{contracted\_paths}.
+\end{enumerate}
+
+\subsection{Evaluation}
+\begin{itemize}
+    \item \textbf{Empirical Results}: On the \texttt{fhcppp} dataset, \texttt{VCCRT Preprocessed} achieves the most compact formula representation:
+    \begin{itemize}
+        \item For \texttt{graph223}, variables are reduced to \textbf{876,620} and clauses decrease to \textbf{993,940} (compared to 2.1M in VCCRT Baseline).
+        \item It yields the fastest solve time on \texttt{graph223} of \textbf{18.753s} (compared to 22.855s in VCCRT Baseline and 135.825s in CRT Baseline).
+        \item On \texttt{graph255}, it reduces solve time from \textbf{33.593s} to \textbf{5.103s}.
+    \end{itemize}
+    \item \textbf{Conclusion}: VCCRT Preprocessed is the most robust configuration, blending graph-level topological simplification with low-overhead vertex-centric logic modeling, resulting in optimal scalability.
+\end{itemize}

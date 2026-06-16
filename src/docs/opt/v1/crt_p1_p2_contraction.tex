@@ -1,0 +1,63 @@
+\section{CRT Preprocessing Phase 1+2: Path Contraction \& Cuts}
+\label{sec:crt_p1_p2_contraction}
+
+\subsection{Overview}
+The \textbf{CRT P1+P2} approach enhances the preprocessing pipeline by integrating \textbf{Phase 2}, which focuses on structural reduction of the graph dimension.
+It combines Degree Cascading with \textbf{Path Contraction} and \textbf{Small Cut-set Detection} (Bridges and 2-Edge-Cuts).
+The primary goal is to reduce the active vertex count $N \to N'$ ($N' < N$), thereby shrinking the modular domains and reducing the number of CRT state variables and clauses.
+
+\subsection{Mathematical \& Logical Formulation}
+
+\subsubsection{Path Contraction}
+A sequence of degree-2 vertices represents a mandatory pathway that the Hamiltonian Cycle must traverse.
+\begin{itemize}
+    \item \textbf{Definition}: A vertex $v$ with $deg(v) = 2$ and neighbors $u, w$ must be traversed as $u \to v \to w$ (or $w \to v \to u$).
+    We can eliminate $v$ and insert a virtual edge $(u, w)$.
+    \item \textbf{Size Reduction}: The vertex count is reduced:
+    \begin{equation}
+        N' = N - 1
+    \end{equation}
+    \item \textbf{Solution Expansion}: When the SAT solver finds a valid cycle in the reduced graph containing virtual edge $(u,w)$, the post-processing phase expands the virtual edge back to the path $u \to v \to w$ to recover the original cycle.
+\end{itemize}
+
+\subsubsection{Bridge \& 2-Edge-Cut Detection}
+\begin{itemize}
+    \item \textbf{Bridge Detection}: An edge $e$ is a bridge if its removal disconnects the graph:
+    \begin{equation}
+        G \setminus \{e\} \text{ is disconnected} \implies \text{UNSAT}
+    \end{equation}
+    Since a Hamiltonian Cycle must visit every vertex and return, it cannot cross a bridge and return without repeating vertices.
+    \item \textbf{2-Edge-Cut Detection}: A pair of edges $\{e_1, e_2\}$ forms a 2-edge-cut if their removal disconnects the graph into two components $G_1, G_2$.
+    The Hamiltonian Cycle must cross between these components exactly once in each direction:
+    \begin{equation}
+        \{e_1, e_2\} \text{ is a 2-edge-cut} \implies \text{Force}(e_1) \land \text{Force}(e_2)
+    \end{equation}
+\end{itemize}
+
+\subsection{Algorithm Steps}
+\begin{enumerate}
+    \item \textbf{Phase 1 Execution}: Run Degree Cascading to propagate initial degree constraints.
+    \item \textbf{Cut Analysis}:
+    \begin{enumerate}
+        \item Compute bridges. If any bridge exists $\implies$ return UNSAT.
+        \item Compute 2-edge-cuts by temporarily removing each active edge and checking for bridges. Force both edges of any detected cuts.
+    \end{enumerate}
+    \item \textbf{Contraction Execution}:
+    \begin{enumerate}
+        \item Find chains of degree-2 vertices.
+        \item Replace them with virtual edges and record the mapping in \texttt{contracted\_paths}.
+        \item Construct the reduced graph $G'$ with $N' < N$ vertices.
+    \end{enumerate}
+    \item \textbf{Fixpoint Loop}: Repeat \texttt{Cascade} $\rightarrow$ \texttt{Cut Analysis} $\rightarrow$ \texttt{Contraction} until the graph structure stabilizes.
+    \item \textbf{CRT Generation}: Generate the CNF encoding based on the final reduced graph $G'$ and size $N'$.
+\end{enumerate}
+
+\subsection{Evaluation}
+\begin{itemize}
+    \item \textbf{Empirical Results}: On the \texttt{fhcppp} dataset, Phase 2 achieves substantial state space reduction:
+    \begin{itemize}
+        \item For \texttt{graph223}, variables decrease from \textbf{1,938,300} to \textbf{865,532} (a \textbf{55.3\%} reduction), and clauses drop from \textbf{2.1M} to \textbf{1.02M}.
+        \item For \texttt{graph255}, variables decrease by \textbf{55.5\%} (from 2.52M to 1.12M).
+    \end{itemize}
+    \item \textbf{Overhead}: Although 2-edge-cut detection requires $O(E \times (V+E))$ time, the significant reduction in SAT solver search time pays off heavily on large instances.
+\end{itemize}

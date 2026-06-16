@@ -1,0 +1,53 @@
+\section{Vertex-Centric CRT (VCCRT) Baseline}
+\label{sec:vccrt_baseline}
+
+\subsection{Overview}
+The \textbf{VCCRT Baseline} is a vertex-centric successor encoding model that optimizes the mathematical representation of transitions in the SAT formulation.
+In the traditional edge-centric CRT encoding, successor transition clauses ($P_j = Succ(P_i)$) are duplicated for every edge.
+VCCRT separates this by precomputing the successor state variables $S_i$ locally at each vertex $i$ independent of the edges, and then copying these states to neighbor vertices $j$ only if the connecting edge $i \to j$ is active ($H_{i,j} = 1$).
+No graph-level preprocessing is applied in this configuration.
+
+\subsection{Mathematical \& Logical Formulation}
+
+\subsubsection{Auxiliary Variables}
+In addition to the edge variables $H_{i,j}$ and positional state variables $P_{i,b}$, VCCRT introduces auxiliary successor variables:
+\begin{itemize}
+    \item \textbf{Successor State Bits ($S_{i,b}$)}: Represents the $b$-th bit of the binary encoding of the successor position immediately following vertex $i$ in the cycle.
+\end{itemize}
+
+\subsubsection{Constraints}
+
+\paragraph{Local Positional Transitions}
+For every vertex $i \in V$, the successor state $S_i$ is constrained to be the local successor function ($Succ$) of the current position $P_i$:
+\begin{equation}
+    S_i \equiv Succ(P_i) \quad \forall i \in V
+\end{equation}
+These complex modular addition clauses are generated only once per vertex, resulting in $O(N \log N)$ transition clauses.
+
+\paragraph{Copy Constraints Across Edges}
+For each directed edge $i \to j$ (excluding transitions to the start vertex, i.e., $j \neq first$), if the edge is selected ($H_{i,j} = 1$), the successor position of $i$ is copied to the position of $j$:
+\begin{equation}
+    H_{i,j} \implies (P_{j,b} \leftrightarrow S_{i,b}) \quad \forall b
+\end{equation}
+This implication is encoded into simple 3-literal clauses:
+\begin{equation}
+    \left( \neg H_{i,j} \lor P_{j,b} \lor \neg S_{i,b} \right) \land \left( \neg H_{i,j} \lor \neg P_{j,b} \lor S_{i,b} \right)
+\end{equation}
+
+\subsection{Algorithm Steps}
+\begin{enumerate}
+    \item \textbf{Variable Allocation}: Define edge variables $H_{i,j}$, positional variables $P_{i,b}$, and successor variables $S_{i,b}$.
+    \item \textbf{Local Transition Generation}: For each vertex $i$, generate the logic clauses enforcing $S_i = Succ(P_i)$.
+    \item \textbf{Copy Clause Generation}: For each edge $i \to j$, generate the copy clauses $H_{i,j} \implies (P_j = S_i)$.
+    \item \textbf{Cardinality Encoding}: Apply the \texttt{PbLibEncoder} to generate the At-Most-One (AMO) constraints.
+\end{enumerate}
+
+\subsection{Evaluation}
+\begin{itemize}
+    \item \textbf{Advantages}:
+    \begin{itemize}
+        \item \textbf{Clause Count Reduction}: By moving the complex modular transition logic to the vertices ($O(N \log N)$), the edge-level complexity is reduced to simple bit-equivalence copy clauses ($O(E \log N)$). On \texttt{graph162}, VCCRT Baseline requires \textbf{12.2M clauses}, a \textbf{40\%} reduction compared to CRT Baseline (\textbf{20.4M clauses}).
+        \item \textbf{Performance Gain}: On \texttt{graph223}, VCCRT Baseline solves in \textbf{22.855s}, which is \textbf{6 times faster} than CRT Baseline (\textbf{135.825s}).
+    \end{itemize}
+    \item \textbf{Disadvantages}: It introduces $N \times nBits$ additional binary variables ($S_{i,b}$). However, modern SAT solvers handle auxiliary variables efficiently, and the clause reduction outweighs this drawback.
+\end{itemize}

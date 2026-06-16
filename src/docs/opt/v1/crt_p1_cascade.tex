@@ -1,0 +1,62 @@
+\section{CRT Preprocessing Phase 1: Degree Cascade Only}
+\label{sec:crt_p1_cascade}
+
+\subsection{Overview}
+The \textbf{CRT P1} approach integrates the baseline CRT model with the simplest level of graph-level preprocessing: \textbf{Connectivity Checking} and \textbf{Degree Cascading}.
+This configuration aims to detect trivially UNSAT instances early and to pre-assign edge variables that must be part of the cycle, reducing the CNF size before encoding.
+It disables contraction, 2-edge-cuts, and deep probing.
+
+\subsection{Mathematical \& Logical Formulation}
+
+\subsubsection{2-Connectivity Check}
+A Hamiltonian Cycle requires a graph to be strongly connected (for directed graphs) or biconnected (for undirected graphs):
+\begin{itemize}
+    \item \textbf{Directed Graphs}: The number of strongly connected components (SCC) must be exactly 1:
+    \begin{equation}
+        \text{SCC\_Count}(G) = 1
+    \end{equation}
+    \item \textbf{Undirected Graphs}: The graph must not contain any articulation points that would disconnect it upon removal.
+\end{itemize}
+If these connectivity requirements are not satisfied, the algorithm immediately terminates and reports \text{UNSAT}.
+
+\subsubsection{Degree Cascading Rules}
+Let $deg_{active}(u)$ denote the number of remaining active (non-forbidden) edges incident to vertex $u \in V$:
+\begin{enumerate}
+    \item \textbf{UNSAT Rule}: If there exists any vertex $u$ with $deg_{active}(u) < 2$, the graph cannot contain a Hamiltonian Cycle:
+    \begin{equation}
+        \exists u \in V \text{ s.t. } deg_{active}(u) < 2 \implies \text{UNSAT}
+    \end{equation}
+    \item \textbf{Forcing Rule}: If any vertex $u$ has exactly $deg_{active}(u) = 2$, both incident active edges $e_1, e_2$ must belong to the cycle:
+    \begin{equation}
+        deg_{active}(u) = 2 \implies \text{Force}(e_1) \land \text{Force}(e_2)
+    \end{equation}
+    \item \textbf{Forbidding Rule}: If an edge $e = (u,v)$ is forced, all other incident edges to its endpoints $u$ and $v$ must be forbidden:
+    \begin{equation}
+        \text{Force}(e) \implies \text{Forbid}(e') \quad \forall e' \in (Adj(u) \cup Adj(v)) \setminus \{e\}
+    \end{equation}
+    \item \textbf{Fixpoint Loop}: Forbidding edges in Step 3 reduces the degree of neighboring vertices, potentially triggering new degree-2 conditions. This cascade propagates iteratively until no further changes occur.
+\end{enumerate}
+
+\subsection{Algorithm Steps}
+\begin{enumerate}
+    \item \textbf{Connectivity Validation}: Run Tarjan's DFS biconnectivity algorithm. If the graph is not 2-connected, return UNSAT.
+    \item \textbf{Queue Initialization}: Push all vertices with $deg_{active}(u) = 2$ into a processing queue.
+    \item \textbf{Cascade Execution}:
+    \begin{enumerate}
+        \item Pop a vertex $u$ from the queue.
+        \item Force its two remaining active incident edges.
+        \item Mark all other neighboring edges as forbidden.
+        \item Add any newly affected vertices that now have $deg_{active} = 2$ to the queue.
+    \end{enumerate}
+    \item \textbf{CNF Construction}: Encode the remaining graph using CRT. The forced edges are injected into the SAT solver directly as unit clauses (e.g., $H_{i,j}$).
+\end{enumerate}
+
+\subsection{Evaluation}
+\begin{itemize}
+    \item \textbf{Empirical Results}: On the \texttt{fhcppp} dataset, Degree Cascade shows massive efficiency improvements:
+    \begin{itemize}
+        \item For \texttt{graph162}, the clause count is cut by \textbf{95.5\%} (from 20.4M to 912,587), and solve time drops from \textbf{8.198s} to \textbf{0.002s}.
+        \item For cubic graphs, it systematically reduces the clause counts by approximately \textbf{50\%}.
+    \end{itemize}
+    \item \textbf{Overhead}: The preprocessing time for Phase 1 is negligible ($< 0.01$s), making it a highly cost-effective optimization.
+\end{itemize}
