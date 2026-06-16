@@ -8,13 +8,18 @@ class CRTPreprocessed(SuccessorMethod):
     Experimental preprocessed CRT successor encoding.
     It runs the HCPPreprocessor graph-level preprocessing before building the CRT clauses.
     """
-    def __init__(self, encoder=None, cycle=None, enable_probing=True, max_probing_edges=300, enable_contraction=True, enable_2cut=True):
+    def __init__(self, encoder=None, cycle=None, enable_probing=True, max_probing_edges=300, enable_contraction=True, enable_2cut=True, crt_class=None):
         super().__init__(encoder)
         self.cycle_override = cycle
         self.enable_probing = enable_probing
         self.max_probing_edges = max_probing_edges
         self.enable_contraction = enable_contraction
         self.enable_2cut = enable_2cut
+        if crt_class is None:
+            from libs.models.successor.crt import CRT
+            self.crt_class = CRT
+        else:
+            self.crt_class = crt_class
         
         self.H = {}  # maps original (i, j) -> SAT variable
         self._forbidden_var = None
@@ -115,7 +120,7 @@ class CRTPreprocessed(SuccessorMethod):
                     self.edge_map[(path[r+1], path[r])] = ('reduced', v_red, u_red)
 
         # 4. Build CRT clauses on the reduced graph
-        self.reduced_crt = CRT(encoder=self.encoder, cycle=self.cycle_override)
+        self.reduced_crt = self.crt_class(encoder=self.encoder, cycle=self.cycle_override)
         self.reduced_crt.context = self.context
         
         # Build clauses on the reduced graph

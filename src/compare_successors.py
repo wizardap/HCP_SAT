@@ -21,6 +21,8 @@ from libs.models.successor.vee import Vee
 from libs.models.successor.ocrt import OCRT
 from libs.models.successor.inc_crt import IncCRT
 from libs.models.successor.inc_ocrt import IncOCRT
+from experiment.preprocessing.crt_preprocessed import CRTPreprocessed
+from libs.models.successor.vccrt import VCCRT
 
 
 def verify_hamiltonian_cycle(HCP, graph, N):
@@ -76,6 +78,9 @@ def run_benchmark(graph_path, solver_name):
         ("Vee", lambda enc: Vee(enc)),
         ("OCRT", lambda enc: OCRT(vee_encoder=NSCEncoding(), crt_encoder=enc)),
         ("IncOCRT", lambda enc: IncOCRT(vee_encoder=NSCEncoding(), crt_encoder=enc)),
+        ("CRTPreprocessed", lambda enc: CRTPreprocessed(enc)),
+        ("VCCRT", lambda enc: VCCRT(enc)),
+        ("VCCRTPreprocessed", lambda enc: CRTPreprocessed(enc, crt_class=VCCRT)),
      ]
 
     print(f"Graph: {os.path.basename(graph_path)}")
