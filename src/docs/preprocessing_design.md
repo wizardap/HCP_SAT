@@ -168,6 +168,12 @@ Key insight: Probing + Cascade + Contraction = "tam tài" trên cubic graphs.
 | 3.4 | Probe budget/heuristic for large graphs |
 | 3.5 | Final comprehensive benchmark |
 
+### Phase 4: Small Cuts (Optional)
+| Task | Description |
+|---|---|
+| 4.1 | Small cut-set enumeration (size 3+) |
+| 4.2 | Force edges in small cut-sets & evaluate impact |
+
 ---
 
 ## 6. Decision Log
