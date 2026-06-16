@@ -16,3 +16,14 @@ graph506.hcp                   8797152    8909802    SAT         57.561288595199
 graph522.hcp                   9375840    9492138    SAT         57.47231340408325 valid     
 graph526.hcp                   9672096    9790218    SAT         131.13595032691956 valid     
 graph529.hcp                   9821952    9940986    SAT         69.0976870059967 valid     
+graph1.hcp                     5082       10192      SAT         0.09       valid     
+graph1.hcp                     5082       10192      SAT         0.083      valid     
+graph48.hcp                    118340     166911     SAT         61.167     valid     
+graph48.hcp                    6981       58217      SAT         84.303     valid     
+graph48.hcp                    5986       54557      SAT         88.29      valid     
+graph48.hcp                    6981       58217      SAT         85.352     valid     
+graph48.hcp                    6861       54367      SAT         57.572     valid     
+graph48.hcp                    6258       53965      SAT         97.377     valid     
+graph48.hcp                    6981       58008      SAT         118.696    valid     
+graph171.hcp                   16266      136895     SAT         24.435     valid     
+graph1.hcp                     5676       10348      SAT         0.137      valid     
