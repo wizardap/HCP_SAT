@@ -1,0 +1,879 @@
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Comparing CRT vs VCCRT on 30 instances...
+Solver: CADICAL
+--------------------------------------------------------------------------------------------------------------
+
+--- Running instance: graph1.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.15s.
+[Preprocessor] Stats: {'time': 0.09615921974182129, 'orig_v': 66, 'reduced_v': 66, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.182s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.142s.
+[Preprocessor] Stats: {'time': 0.1833944320678711, 'orig_v': 66, 'reduced_v': 66, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.245s.
+
+--- Running instance: graph2.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.008s.
+[Preprocessor] Stats: {'time': 0.12595105171203613, 'orig_v': 70, 'reduced_v': 70, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.082s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.261s.
+[Preprocessor] Stats: {'time': 0.09521913528442383, 'orig_v': 70, 'reduced_v': 70, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.221s.
+
+--- Running instance: graph3.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.111s.
+[Preprocessor] Stats: {'time': 0.22555017471313477, 'orig_v': 78, 'reduced_v': 78, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.119s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.283s.
+[Preprocessor] Stats: {'time': 0.1915733814239502, 'orig_v': 78, 'reduced_v': 78, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.222s.
+
+--- Running instance: graph4.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.033s.
+[Preprocessor] Stats: {'time': 0.1716020107269287, 'orig_v': 84, 'reduced_v': 84, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.012s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.038s.
+[Preprocessor] Stats: {'time': 0.21915721893310547, 'orig_v': 84, 'reduced_v': 84, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.081s.
+
+--- Running instance: graph5.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.036s.
+[Preprocessor] Stats: {'time': 0.29445338249206543, 'orig_v': 90, 'reduced_v': 90, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.136s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.26s.
+[Preprocessor] Stats: {'time': 0.22823262214660645, 'orig_v': 90, 'reduced_v': 90, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.417s.
+
+--- Running instance: graph6.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.153s.
+[Preprocessor] Stats: {'time': 0.19969582557678223, 'orig_v': 94, 'reduced_v': 94, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.023s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.13s.
+[Preprocessor] Stats: {'time': 0.2239546775817871, 'orig_v': 94, 'reduced_v': 94, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.085s.
+
+--- Running instance: graph7.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.146s.
+[Preprocessor] Stats: {'time': 0.4259457588195801, 'orig_v': 102, 'reduced_v': 102, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.11s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.325s.
+[Preprocessor] Stats: {'time': 0.23808979988098145, 'orig_v': 102, 'reduced_v': 102, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.175s.
+
+--- Running instance: graph8.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.137s.
+[Preprocessor] Stats: {'time': 0.20499467849731445, 'orig_v': 108, 'reduced_v': 108, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.078s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.14s.
+[Preprocessor] Stats: {'time': 0.20532608032226562, 'orig_v': 108, 'reduced_v': 108, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.165s.
+
+--- Running instance: graph9.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.108s.
+[Preprocessor] Stats: {'time': 0.22541499137878418, 'orig_v': 114, 'reduced_v': 114, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.088s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.202s.
+[Preprocessor] Stats: {'time': 0.2456355094909668, 'orig_v': 114, 'reduced_v': 114, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.275s.
+
+--- Running instance: graph10.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.153s.
+[Preprocessor] Stats: {'time': 0.27726197242736816, 'orig_v': 118, 'reduced_v': 118, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.227s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.3s.
+[Preprocessor] Stats: {'time': 0.2641918659210205, 'orig_v': 118, 'reduced_v': 118, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.249s.
+
+--- Running instance: graph11.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.154s.
+[Preprocessor] Stats: {'time': 0.2780768871307373, 'orig_v': 126, 'reduced_v': 126, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.483s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.18s.
+[Preprocessor] Stats: {'time': 0.27545952796936035, 'orig_v': 126, 'reduced_v': 126, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.225s.
+
+--- Running instance: graph12.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.026s.
+[Preprocessor] Stats: {'time': 0.3340146541595459, 'orig_v': 132, 'reduced_v': 132, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.356s.Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.017s.
+[Preprocessor] Stats: {'time': 0.30754971504211426, 'orig_v': 132, 'reduced_v': 132, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.014s.
+
+--- Running instance: graph13.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.131s.
+[Preprocessor] Stats: {'time': 0.3425278663635254, 'orig_v': 138, 'reduced_v': 138, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.135s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.2s.
+[Preprocessor] Stats: {'time': 0.3245065212249756, 'orig_v': 138, 'reduced_v': 138, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.222s.
+
+--- Running instance: graph14.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.154s.
+[Preprocessor] Stats: {'time': 0.3413419723510742, 'orig_v': 142, 'reduced_v': 142, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.107s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.019s.
+[Preprocessor] Stats: {'time': 0.3502993583679199, 'orig_v': 142, 'reduced_v': 142, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.016s.
+
+--- Running instance: graph15.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.132s.
+[Preprocessor] Stats: {'time': 0.39167141914367676, 'orig_v': 150, 'reduced_v': 150, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.165s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.165s.
+[Preprocessor] Stats: {'time': 0.4014010429382324, 'orig_v': 150, 'reduced_v': 150, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.151s.
+
+--- Running instance: graph16.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.12s.
+[Preprocessor] Stats: {'time': 0.4207460880279541, 'orig_v': 156, 'reduced_v': 156, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.128s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.164s.
+[Preprocessor] Stats: {'time': 0.4196052551269531, 'orig_v': 156, 'reduced_v': 156, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.602s.
+
+--- Running instance: graph17.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.126s.
+[Preprocessor] Stats: {'time': 0.446880578994751, 'orig_v': 162, 'reduced_v': 162, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.126s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.24s.
+[Preprocessor] Stats: {'time': 0.4561159610748291, 'orig_v': 162, 'reduced_v': 162, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.219s.
+
+--- Running instance: graph18.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.16s.
+[Preprocessor] Stats: {'time': 0.46379899978637695, 'orig_v': 166, 'reduced_v': 166, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.155s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.606s.
+[Preprocessor] Stats: {'time': 0.4886026382446289, 'orig_v': 166, 'reduced_v': 166, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.23s.
+
+--- Running instance: graph19.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 8.207s.
+[Preprocessor] Stats: {'time': 0.14587807655334473, 'orig_v': 170, 'reduced_v': 169, 'forced_count': 2, 'forbidden_count': 0, 'contracted_count': 1}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 10.716s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 7.231s.
+[Preprocessor] Stats: {'time': 0.1475682258605957, 'orig_v': 170, 'reduced_v': 169, 'forced_count': 2, 'forbidden_count': 0, 'contracted_count': 1}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 11.372s.
+
+--- Running instance: graph20.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.157s.
+[Preprocessor] Stats: {'time': 0.5237147808074951, 'orig_v': 174, 'reduced_v': 174, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.089s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.233s.
+[Preprocessor] Stats: {'time': 0.5841248035430908, 'orig_v': 174, 'reduced_v': 174, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.513s.
+
+--- Running instance: graph21.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.504s.
+[Preprocessor] Stats: {'time': 0.5589711666107178, 'orig_v': 180, 'reduced_v': 180, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.117s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.498s.
+[Preprocessor] Stats: {'time': 0.5868797302246094, 'orig_v': 180, 'reduced_v': 180, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.593s.
+
+--- Running instance: graph22.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.581s.
+[Preprocessor] Stats: {'time': 0.5953733921051025, 'orig_v': 186, 'reduced_v': 186, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.147s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.283s.
+[Preprocessor] Stats: {'time': 0.619952917098999, 'orig_v': 186, 'reduced_v': 186, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.152s.
+
+--- Running instance: graph23.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.26s.
+[Preprocessor] Stats: {'time': 0.6716625690460205, 'orig_v': 190, 'reduced_v': 190, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.25s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.337s.
+[Preprocessor] Stats: {'time': -0.6510124206542969, 'orig_v': 190, 'reduced_v': 190, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.459s.
+
+--- Running instance: graph24.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.158s.
+[Preprocessor] Stats: {'time': 0.655480146408081, 'orig_v': 198, 'reduced_v': 198, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.171s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.646s.
+[Preprocessor] Stats: {'time': 0.6687862873077393, 'orig_v': 198, 'reduced_v': 198, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.125s.
+
+--- Running instance: graph25.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.909s.
+[Preprocessor] Stats: {'time': 0.09460330009460449, 'orig_v': 204, 'reduced_v': 204, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.231s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 1.015s.
+[Preprocessor] Stats: {'time': 0.09377264976501465, 'orig_v': 204, 'reduced_v': 204, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.575s.
+
+--- Running instance: graph26.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.206s.
+[Preprocessor] Stats: {'time': 0.09250593185424805, 'orig_v': 210, 'reduced_v': 210, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.181s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.658s.
+[Preprocessor] Stats: {'time': 0.09008574485778809, 'orig_v': 210, 'reduced_v': 210, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.475s.
+
+--- Running instance: graph27.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.275s.
+[Preprocessor] Stats: {'time': 0.17551803588867188, 'orig_v': 214, 'reduced_v': 214, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.203s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.282s.
+[Preprocessor] Stats: {'time': 0.11182594299316406, 'orig_v': 214, 'reduced_v': 214, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.672s.
+
+--- Running instance: graph28.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.862s.
+[Preprocessor] Stats: {'time': 0.11637377738952637, 'orig_v': 222, 'reduced_v': 222, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.152s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.186s.
+[Preprocessor] Stats: {'time': 0.13538289070129395, 'orig_v': 222, 'reduced_v': 222, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.306s.
+
+--- Running instance: graph29.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.873s.
+[Preprocessor] Stats: {'time': 0.16205668449401855, 'orig_v': 228, 'reduced_v': 228, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.128s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.845s.
+[Preprocessor] Stats: {'time': 0.11687159538269043, 'orig_v': 228, 'reduced_v': 228, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.455s.
+
+--- Running instance: graph30.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.306s.
+[Preprocessor] Stats: {'time': 0.1371300220489502, 'orig_v': 234, 'reduced_v': 234, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.128s.
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.266s.
+[Preprocessor] Stats: {'time': 0.12676477432250977, 'orig_v': 234, 'reduced_v': 234, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.653s.
+
+====================================================================================================
+File / Successor                    | Vars     | Clauses    | Build (s)  | Solve (s)  | Status      
+----------------------------------------------------------------------------------------------------
+graph1.hcp (CRT (Baseline))         | 4950     | 20120      | 0.0084     | 0.1500     | SUCCESS     
+  └─ CRTPreprocessed                | 4950     | 10060      | 0.1104     | 0.1820     | SUCCESS     
+  └─ VCCRT (Baseline)               | 5544     | 20432      | 0.0156     | 0.1420     | SUCCESS     
+  └─ VCCRTPreprocessed              | 5544     | 10216      | 0.2039     | 0.2450     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph2.hcp (CRT (Baseline))         | 5530     | 22028      | 0.0241     | 0.0080     | SUCCESS     
+  └─ CRTPreprocessed                | 5530     | 11014      | 0.1341     | 0.0820     | SUCCESS     
+  └─ VCCRT (Baseline)               | 6160     | 22324      | 0.0135     | 0.2610     | SUCCESS     
+  └─ VCCRTPreprocessed              | 6160     | 11162      | 0.1036     | 0.2210     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph3.hcp (CRT (Baseline))         | 6786     | 25664      | 0.0101     | 0.1110     | SUCCESS     
+  └─ CRTPreprocessed                | 6786     | 12832      | 0.2386     | 0.1190     | SUCCESS     
+  └─ VCCRT (Baseline)               | 7488     | 26024      | 0.0387     | 0.2830     | SUCCESS     
+  └─ VCCRTPreprocessed              | 7488     | 13012      | 0.2010     | 0.2220     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph4.hcp (CRT (Baseline))         | 7812     | 28776      | 0.0103     | 0.0330     | SUCCESS     
+  └─ CRTPreprocessed                | 7812     | 14388      | 0.1915     | 0.0120     | SUCCESS     
+  └─ VCCRT (Baseline)               | 8568     | 29128      | 0.0161     | 0.0380     | SUCCESS     
+  └─ VCCRTPreprocessed              | 8568     | 14564      | 0.2924     | 0.0810     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph5.hcp (CRT (Baseline))         | 8910     | 31784      | 0.0287     | 0.0360     | SUCCESS     
+  └─ CRTPreprocessed                | 8910     | 15892      | 0.3185     | 0.1360     | SUCCESS     
+  └─ VCCRT (Baseline)               | 9720     | 32192      | 0.0312     | 0.2600     | SUCCESS     
+  └─ VCCRTPreprocessed              | 9720     | 16096      | 0.2475     | 0.4170     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph6.hcp (CRT (Baseline))         | 9682     | 34076      | 0.0220     | 0.1530     | SUCCESS     
+  └─ CRTPreprocessed                | 9682     | 17038      | 0.2140     | 0.0230     | SUCCESS     
+  └─ VCCRT (Baseline)               | 10528    | 34468      | 0.0166     | 0.1300     | SUCCESS     
+  └─ VCCRTPreprocessed              | 10528    | 17234      | 0.2716     | 0.0850     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph7.hcp (CRT (Baseline))         | 11322    | 38480      | 0.0200     | 0.1460     | SUCCESS     
+  └─ CRTPreprocessed                | 11322    | 19240      | 0.4629     | 0.1100     | SUCCESS     
+  └─ VCCRT (Baseline)               | 12240    | 38936      | 0.0312     | 0.3250     | SUCCESS     
+  └─ VCCRTPreprocessed              | 12240    | 19468      | 0.2517     | 0.1750     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph8.hcp (CRT (Baseline))         | 12636    | 42168      | 0.0154     | 0.1370     | SUCCESS     
+  └─ CRTPreprocessed                | 12636    | 21084      | 0.2207     | 0.0780     | SUCCESS     
+  └─ VCCRT (Baseline)               | 13608    | 42616      | 0.0305     | 0.1400     | SUCCESS     
+  └─ VCCRTPreprocessed              | 13608    | 21308      | 0.2199     | 0.1650     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph9.hcp (CRT (Baseline))         | 14022    | 45752      | 0.0238     | 0.1080     | SUCCESS     
+  └─ CRTPreprocessed                | 14022    | 22876      | 0.2432     | 0.0880     | SUCCESS     
+  └─ VCCRT (Baseline)               | 15048    | 46256      | 0.0173     | 0.2020     | SUCCESS     
+  └─ VCCRTPreprocessed              | 15048    | 23128      | 0.2723     | 0.2750     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph10.hcp (CRT (Baseline))        | 14986    | 48428      | 0.0221     | 0.1530     | SUCCESS     
+  └─ CRTPreprocessed                | 14986    | 24214      | 0.2959     | 0.2270     | SUCCESS     
+  └─ VCCRT (Baseline)               | 16048    | 48916      | 0.0289     | 0.3000     | SUCCESS     
+  └─ VCCRTPreprocessed              | 16048    | 24458      | 0.2808     | 0.2490     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph11.hcp (CRT (Baseline))        | 17010    | 53600      | 0.0285     | 0.1540     | SUCCESS     
+  └─ CRTPreprocessed                | 17010    | 26800      | 0.3069     | 0.4830     | SUCCESS     
+  └─ VCCRT (Baseline)               | 18144    | 54152      | 0.0194     | 0.1800     | SUCCESS     
+  └─ VCCRTPreprocessed              | 18144    | 27076      | 0.2949     | 0.2250     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph12.hcp (CRT (Baseline))        | 18612    | 57864      | 0.0334     | 0.0260     | SUCCESS     
+  └─ CRTPreprocessed                | 18612    | 28932      | 0.3687     | 0.3560     | SUCCESS     
+  └─ VCCRT (Baseline)               | 19800    | 58408      | 0.0427     | 0.0170     | SUCCESS     
+  └─ VCCRTPreprocessed              | 19800    | 29204      | 0.3281     | 0.0140     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph13.hcp (CRT (Baseline))        | 20286    | 62024      | 0.0233     | 0.1310     | SUCCESS     
+  └─ CRTPreprocessed                | 20286    | 31012      | 0.3646     | 0.1350     | SUCCESS     
+  └─ VCCRT (Baseline)               | 21528    | 62624      | 0.0319     | 0.2000     | SUCCESS     
+  └─ VCCRTPreprocessed              | 21528    | 31312      | 0.3580     | 0.2220     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph14.hcp (CRT (Baseline))        | 21442    | 65084      | 0.0360     | 0.1540     | SUCCESS     
+  └─ CRTPreprocessed                | 21442    | 32542      | 0.3807     | 0.1070     | SUCCESS     
+  └─ VCCRT (Baseline)               | 22720    | 65668      | 0.0245     | 0.0190     | SUCCESS     
+  └─ VCCRTPreprocessed              | 22720    | 32834      | 0.3733     | 0.0160     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph15.hcp (CRT (Baseline))        | 23850    | 71024      | 0.0267     | 0.1320     | SUCCESS     
+  └─ CRTPreprocessed                | 23850    | 35512      | 0.4238     | 0.1650     | SUCCESS     
+  └─ VCCRT (Baseline)               | 25200    | 71672      | 0.0256     | 0.1650     | SUCCESS     
+  └─ VCCRTPreprocessed              | 25200    | 35836      | 0.4268     | 0.1510     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph16.hcp (CRT (Baseline))        | 25740    | 75864      | 0.0290     | 0.1200     | SUCCESS     
+  └─ CRTPreprocessed                | 25740    | 37932      | 0.4673     | 0.1280     | SUCCESS     
+  └─ VCCRT (Baseline)               | 27144    | 76504      | 0.0270     | 0.1640     | SUCCESS     
+  └─ VCCRTPreprocessed              | 27144    | 38252      | 0.4674     | 0.6020     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph17.hcp (CRT (Baseline))        | 27702    | 80600      | 0.0535     | 0.1260     | SUCCESS     
+  └─ CRTPreprocessed                | 27702    | 40300      | 0.4947     | 0.1260     | SUCCESS     
+  └─ VCCRT (Baseline)               | 29160    | 81296      | 0.0460     | 0.2400     | SUCCESS     
+  └─ VCCRTPreprocessed              | 29160    | 40648      | 0.4850     | 0.2190     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph18.hcp (CRT (Baseline))        | 29050    | 84044      | 0.0326     | 0.1600     | SUCCESS     
+  └─ CRTPreprocessed                | 29050    | 42022      | 0.5219     | 0.1550     | SUCCESS     
+  └─ VCCRT (Baseline)               | 30544    | 84724      | 0.0631     | 0.6060     | SUCCESS     
+  └─ VCCRTPreprocessed              | 30544    | 42362      | 0.5402     | 0.2300     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph19.hcp (CRT (Baseline))        | 30710    | 104080     | 0.0993     | 8.2070     | SUCCESS     
+  └─ CRTPreprocessed                | 30222    | 51390      | 0.2077     | 10.7160    | SUCCESS     
+  └─ VCCRT (Baseline)               | 32240    | 100472     | 0.0583     | 7.2310     | SUCCESS     
+  └─ VCCRTPreprocessed              | 31743    | 49688      | 0.2013     | 11.3720    | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph20.hcp (CRT (Baseline))        | 31842    | 90752      | 0.0328     | 0.1570     | SUCCESS     
+  └─ CRTPreprocessed                | 31842    | 45376      | 0.5812     | 0.0890     | SUCCESS     
+  └─ VCCRT (Baseline)               | 33408    | 91496      | 0.0563     | 0.2330     | SUCCESS     
+  └─ VCCRTPreprocessed              | 33408    | 45748      | 0.6237     | 0.5130     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph21.hcp (CRT (Baseline))        | 34020    | 96168      | 0.0651     | 0.5040     | SUCCESS     
+  └─ CRTPreprocessed                | 34020    | 48084      | 0.6182     | 0.1170     | SUCCESS     
+  └─ VCCRT (Baseline)               | 35640    | 96904      | 0.0676     | 0.4980     | SUCCESS     
+  └─ VCCRTPreprocessed              | 35640    | 48452      | 0.6471     | 0.5930     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph22.hcp (CRT (Baseline))        | 36270    | 101480     | 0.0616     | 0.5810     | SUCCESS     
+  └─ CRTPreprocessed                | 36270    | 50740      | 0.6619     | 0.1470     | SUCCESS     
+  └─ VCCRT (Baseline)               | 37944    | 102272     | 0.0712     | 0.2830     | SUCCESS     
+  └─ VCCRTPreprocessed              | 37944    | 51136      | 0.6968     | 0.1520     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph23.hcp (CRT (Baseline))        | 37810    | 105308     | 0.0693     | 0.2600     | SUCCESS     
+  └─ CRTPreprocessed                | 37810    | 52654      | 0.7355     | 0.2500     | SUCCESS     
+  └─ VCCRT (Baseline)               | 39520    | 106084     | 0.0715     | 0.3370     | SUCCESS     
+  └─ VCCRTPreprocessed              | 39520    | 53042      | -0.5747    | 0.4590     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph24.hcp (CRT (Baseline))        | 40986    | 112784     | 0.0726     | 0.1580     | SUCCESS     
+  └─ CRTPreprocessed                | 40986    | 56392      | 0.7225     | 0.1710     | SUCCESS     
+  └─ VCCRT (Baseline)               | 42768    | 113624     | 0.0810     | 0.6460     | SUCCESS     
+  └─ VCCRTPreprocessed              | 42768    | 56812      | 0.7332     | 0.1250     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph25.hcp (CRT (Baseline))        | 43452    | 118776     | 0.0842     | 0.9090     | SUCCESS     
+  └─ CRTPreprocessed                | 43452    | 59388      | 0.1684     | 0.2310     | SUCCESS     
+  └─ VCCRT (Baseline)               | 45288    | 119608     | 0.0841     | 1.0150     | SUCCESS     
+  └─ VCCRTPreprocessed              | 45288    | 59804      | 0.1629     | 0.5750     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph26.hcp (CRT (Baseline))        | 46200    | 129688     | 0.0914     | 0.2060     | SUCCESS     
+  └─ CRTPreprocessed                | 46200    | 64844      | 0.2138     | 0.1810     | SUCCESS     
+  └─ VCCRT (Baseline)               | 48300    | 129748     | 0.0871     | 0.6580     | SUCCESS     
+  └─ VCCRTPreprocessed              | 48300    | 64874      | 0.2068     | 0.4750     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph27.hcp (CRT (Baseline))        | 47936    | 134012     | 0.0972     | 0.2750     | SUCCESS     
+  └─ CRTPreprocessed                | 47936    | 67006      | 0.2291     | 0.2030     | SUCCESS     
+  └─ VCCRT (Baseline)               | 50076    | 134032     | 0.1218     | 0.2820     | SUCCESS     
+  └─ VCCRTPreprocessed              | 50076    | 67016      | 0.2374     | 0.6720     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph28.hcp (CRT (Baseline))        | 51504    | 142432     | 0.1094     | 0.8620     | SUCCESS     
+  └─ CRTPreprocessed                | 51504    | 71216      | 0.2235     | 0.1520     | SUCCESS     
+  └─ VCCRT (Baseline)               | 53724    | 142492     | 0.1347     | 0.1860     | SUCCESS     
+  └─ VCCRTPreprocessed              | 53724    | 71246      | 0.2372     | 0.3060     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph29.hcp (CRT (Baseline))        | 54264    | 149160     | 0.1011     | 0.8730     | SUCCESS     
+  └─ CRTPreprocessed                | 54264    | 74580      | 0.2676     | 0.1280     | SUCCESS     
+  └─ VCCRT (Baseline)               | 56544    | 149180     | 0.1648     | 0.8450     | SUCCESS     
+  └─ VCCRTPreprocessed              | 56544    | 74590      | 0.1736     | 0.4550     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph30.hcp (CRT (Baseline))        | 57096    | 155752     | 0.1357     | 0.3060     | SUCCESS     
+  └─ CRTPreprocessed                | 57096    | 77876      | 0.1976     | 0.1280     | SUCCESS     
+  └─ VCCRT (Baseline)               | 59436    | 155812     | 0.1669     | 0.2660     | SUCCESS     
+  └─ VCCRTPreprocessed              | 59436    | 77906      | 0.1853     | 0.6530     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+

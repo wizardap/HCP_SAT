@@ -1,5 +1,7 @@
 import os
 import sys
+import random
+import time
 from threading import Timer
 from pysat.solvers import Solver
 
@@ -81,12 +83,6 @@ class HcpSolver:
         # Ensure the directory exists
         os.makedirs(os.path.dirname(input_file), exist_ok=True)
 
-        # Write each clause to the file
-        with open(input_file, 'w') as writer:
-            for clause in cnf:
-                writer.write(" ".join(map(str, clause)) + "\n")
-        print(f"Input written to {input_file}.\n")
-
         result = {
             "nofVariables": self.context.total_vars(),
             "nofClauses": len(cnf),
@@ -96,27 +92,63 @@ class HcpSolver:
             "vOfHC": None
         }
 
-        print("Running SAT solver...")
-        bashCommand = f"./src/utils/all_cadical/runlim -r {TIME_BUDGET + 10} -o src/utils/all_cadical/report.txt {sys.executable} src/utils/all_cadical/cadical.py"
-        os.system(bashCommand)
+        print("Running SAT solver with Iterative Deepening Restarts...")
+        total_time = 0.0
+        current_limit = 5.0 # Start with a 5-second limit
+        attempt = 1
 
-        # Handle output
-        try:
-            with open(output_file, 'r') as file:
-                lines = file.readlines()
-            if lines and lines[0] != "-1\n":
-                time_run = float(lines[1])
-                print(f"Time run: {time_run}s.")
-                if lines[0] == "0\n":
-                    result["status"] = "UNSAT"
-                else:
-                    result["status"] = "SAT"
-                    result["model"] = list(map(int, lines[2].split()))
-                result["time"] = time_run
-            os.remove(output_file)
-        except FileNotFoundError:
-            print(f"Output file '{output_file}' not found.")
+        while total_time < TIME_BUDGET:
+            # Seed diversification: shuffle clauses
+            random.shuffle(cnf)
+            
+            # Write each clause to the file
+            with open(input_file, 'w') as writer:
+                for clause in cnf:
+                    writer.write(" ".join(map(str, clause)) + "\n")
+            
+            # Bound the limit so we don't exceed TIME_BUDGET
+            if total_time + current_limit > TIME_BUDGET:
+                current_limit = TIME_BUDGET - total_time
+            
+            print(f"Attempt {attempt}: limit {current_limit}s, elapsed {total_time:.1f}s")
+            
+            # Add +2 for runlim margin
+            bashCommand = f"./src/utils/all_cadical/runlim -r {int(current_limit + 2)} -o src/utils/all_cadical/report.txt {sys.executable} src/utils/all_cadical/cadical.py"
+            
+            t_start = time.time()
+            os.system(bashCommand)
+            t_elapsed = time.time() - t_start
+            
+            total_time += t_elapsed
+            
+            # Handle output
+            success = False
+            try:
+                with open(output_file, 'r') as file:
+                    lines = file.readlines()
+                if lines and lines[0] != "-1\n":
+                    time_run = float(lines[1])
+                    print(f"Time run: {time_run}s.")
+                    if lines[0] == "0\n":
+                        result["status"] = "UNSAT"
+                    else:
+                        result["status"] = "SAT"
+                        result["model"] = list(map(int, lines[2].split()))
+                    # We report total elapsed time across all attempts
+                    result["time"] = total_time 
+                    success = True
+                os.remove(output_file)
+            except FileNotFoundError:
+                pass
+                
+            if success:
+                return result
+                
+            # If it failed/timed out, double the time limit for next attempt
+            current_limit *= 2
+            attempt += 1
 
+        print("Overall TIME_BUDGET exceeded across all attempts.")
         return result
 
     def print_result(self, model, getH, result):

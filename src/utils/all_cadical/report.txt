@@ -1,25 +1,24 @@
 [runlim] version:		2.0.0rc12
-[runlim] host:			9eb6bbf9a0dc
+[runlim] host:			LAPTOP-TQ703Q3I
 [runlim] time limit:		311040000 seconds
-[runlim] real time limit:	609 seconds
-[runlim] space limit:		128711 MB
-[runlim] argv[0]:		/root/HCP_SAT/.venv/bin/python3
+[runlim] real time limit:	300 seconds
+[runlim] space limit:		3780 MB
+[runlim] argv[0]:		/home/wizardap/HCP-SAT/.venv/bin/python
 [runlim] argv[1]:		src/utils/all_cadical/cadical.py
-[runlim] start:			Sat Jun 13 15:44:39 2026
-[runlim] child:			7442
-[runlim] sample:		10.00 time, 10.01 real, 1440 MB, 9.11 load
-[runlim] sample:		20.00 time, 20.01 real, 2730 MB, 9.09 load
-[runlim] sample:		30.00 time, 30.01 real, 292 MB, 9.08 load
-[runlim] sample:		40.00 time, 40.01 real, 292 MB, 9.06 load
-[runlim] sample:		50.00 time, 50.01 real, 292 MB, 9.13 load
-[runlim] sample:		60.00 time, 60.01 real, 1229 MB, 9.11 load
-[runlim] end:			Sat Jun 13 15:45:40 2026
+[runlim] start:			Thu Jun 18 00:07:48 2026
+[runlim] child:			2326
+[runlim] sample:		10.44 time, 11.44 real, 39 MB, 1.04 load
+[runlim] sample:		20.89 time, 21.44 real, 39 MB, 1.11 load
+[runlim] sample:		31.33 time, 31.44 real, 48 MB, 1.09 load
+[runlim] sample:		41.77 time, 42.88 real, 46 MB, 1.08 load
+[runlim] sample:		52.22 time, 52.88 real, 55 MB, 1.06 load
+[runlim] end:			Thu Jun 18 00:08:42 2026
 [runlim] status:		ok
 [runlim] result:		0
 [runlim] children:		1
 [runlim] processes:		2
-[runlim] real:			60.93 seconds
-[runlim] time:			60.87 seconds
-[runlim] space:			2768 MB
-[runlim] load:			9.14 maximum
-[runlim] samples:		610
+[runlim] real:			53.49 seconds
+[runlim] time:			52.85 seconds
+[runlim] space:			64 MB
+[runlim] load:			1.12 maximum
+[runlim] samples:		507

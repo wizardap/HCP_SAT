@@ -1,0 +1,909 @@
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Comparing solvers on 30 instances...
+Solver: CADICAL
+--------------------------------------------------------------------------------------------------------------
+
+--- Running instance: graph1.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.147s.
+[Preprocessor] Stats: {'time': 0.0005447864532470703, 'orig_v': 66, 'reduced_v': 66, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.109s.
+[Preprocessor] Stats: {'time': 0.008619546890258789, 'orig_v': 66, 'reduced_v': 66, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.114s.
+[Preprocessor] Stats: {'time': 0.06982970237731934, 'orig_v': 66, 'reduced_v': 66, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.108s.
+
+--- Running instance: graph2.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.004s.
+[Preprocessor] Stats: {'time': 0.0005199909210205078, 'orig_v': 70, 'reduced_v': 70, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.082s.
+[Preprocessor] Stats: {'time': 0.009442806243896484, 'orig_v': 70, 'reduced_v': 70, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.074s.
+[Preprocessor] Stats: {'time': 0.07945752143859863, 'orig_v': 70, 'reduced_v': 70, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.074s.
+
+--- Running instance: graph3.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.076s.
+[Preprocessor] Stats: {'time': 0.0006043910980224609, 'orig_v': 78, 'reduced_v': 78, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.09s.
+[Preprocessor] Stats: {'time': 0.012252569198608398, 'orig_v': 78, 'reduced_v': 78, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.084s.
+[Preprocessor] Stats: {'time': 0.10149621963500977, 'orig_v': 78, 'reduced_v': 78, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.083s.
+
+--- Running instance: graph4.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.014s.
+[Preprocessor] Stats: {'time': 0.0006258487701416016, 'orig_v': 84, 'reduced_v': 84, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.012s.
+[Preprocessor] Stats: {'time': 0.01797652244567871, 'orig_v': 84, 'reduced_v': 84, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.012s.
+[Preprocessor] Stats: {'time': 0.11494326591491699, 'orig_v': 84, 'reduced_v': 84, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.013s.
+
+--- Running instance: graph5.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.022s.
+[Preprocessor] Stats: {'time': 0.0006856918334960938, 'orig_v': 90, 'reduced_v': 90, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.101s.
+[Preprocessor] Stats: {'time': 0.016074657440185547, 'orig_v': 90, 'reduced_v': 90, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.103s.
+[Preprocessor] Stats: {'time': 0.14134502410888672, 'orig_v': 90, 'reduced_v': 90, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.101s.
+
+--- Running instance: graph6.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.096s.
+[Preprocessor] Stats: {'time': 0.0007088184356689453, 'orig_v': 94, 'reduced_v': 94, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.02s.
+[Preprocessor] Stats: {'time': 0.017534255981445312, 'orig_v': 94, 'reduced_v': 94, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.033s.
+[Preprocessor] Stats: {'time': 0.1440417766571045, 'orig_v': 94, 'reduced_v': 94, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.021s.
+
+--- Running instance: graph7.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.111s.
+[Preprocessor] Stats: {'time': 0.0008578300476074219, 'orig_v': 102, 'reduced_v': 102, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.081s.
+[Preprocessor] Stats: {'time': 0.02366018295288086, 'orig_v': 102, 'reduced_v': 102, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.077s.
+[Preprocessor] Stats: {'time': 0.17882704734802246, 'orig_v': 102, 'reduced_v': 102, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.079s.
+
+--- Running instance: graph8.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.137s.
+[Preprocessor] Stats: {'time': 0.0008859634399414062, 'orig_v': 108, 'reduced_v': 108, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.068s.
+[Preprocessor] Stats: {'time': 0.024165630340576172, 'orig_v': 108, 'reduced_v': 108, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.067s.
+[Preprocessor] Stats: {'time': 0.1977696418762207, 'orig_v': 108, 'reduced_v': 108, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.069s.
+
+--- Running instance: graph9.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.121s.
+[Preprocessor] Stats: {'time': 0.000957489013671875, 'orig_v': 114, 'reduced_v': 114, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.089s.
+[Preprocessor] Stats: {'time': 0.030457496643066406, 'orig_v': 114, 'reduced_v': 114, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.085s.
+[Preprocessor] Stats: {'time': 0.2256298065185547, 'orig_v': 114, 'reduced_v': 114, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.086s.
+
+--- Running instance: graph10.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.131s.
+[Preprocessor] Stats: {'time': 0.0012981891632080078, 'orig_v': 118, 'reduced_v': 118, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.189s.
+[Preprocessor] Stats: {'time': 0.03214216232299805, 'orig_v': 118, 'reduced_v': 118, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.199s.
+[Preprocessor] Stats: {'time': 0.2472667694091797, 'orig_v': 118, 'reduced_v': 118, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.185s.
+
+--- Running instance: graph11.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.141s.
+[Preprocessor] Stats: {'time': 0.0010144710540771484, 'orig_v': 126, 'reduced_v': 126, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.479s.
+[Preprocessor] Stats: {'time': 0.03389883041381836, 'orig_v': 126, 'reduced_v': 126, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.473s.
+[Preprocessor] Stats: {'time': 0.2645838260650635, 'orig_v': 126, 'reduced_v': 126, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.466s.
+
+--- Running instance: graph12.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.031s.
+[Preprocessor] Stats: {'time': 0.0010788440704345703, 'orig_v': 132, 'reduced_v': 132, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.297s.
+[Preprocessor] Stats: {'time': 0.03720974922180176, 'orig_v': 132, 'reduced_v': 132, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.304s.
+[Preprocessor] Stats: {'time': 0.3000147342681885, 'orig_v': 132, 'reduced_v': 132, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.298s.
+
+--- Running instance: graph13.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.138s.
+[Preprocessor] Stats: {'time': 0.0010743141174316406, 'orig_v': 138, 'reduced_v': 138, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.136s.
+[Preprocessor] Stats: {'time': 0.03908801078796387, 'orig_v': 138, 'reduced_v': 138, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.135s.
+[Preprocessor] Stats: {'time': 0.3211214542388916, 'orig_v': 138, 'reduced_v': 138, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.138s.
+
+--- Running instance: graph14.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.158s.
+[Preprocessor] Stats: {'time': 0.0012562274932861328, 'orig_v': 142, 'reduced_v': 142, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.106s.
+[Preprocessor] Stats: {'time': 0.042211055755615234, 'orig_v': 142, 'reduced_v': 142, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.106s.
+[Preprocessor] Stats: {'time': 0.34128332138061523, 'orig_v': 142, 'reduced_v': 142, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.106s.
+
+--- Running instance: graph15.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.159s.
+[Preprocessor] Stats: {'time': 0.0012853145599365234, 'orig_v': 150, 'reduced_v': 150, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.163s.
+[Preprocessor] Stats: {'time': 0.05060744285583496, 'orig_v': 150, 'reduced_v': 150, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.178s.
+[Preprocessor] Stats: {'time': 0.37677812576293945, 'orig_v': 150, 'reduced_v': 150, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.165s.
+
+--- Running instance: graph16.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.122s.
+[Preprocessor] Stats: {'time': 0.0012428760528564453, 'orig_v': 156, 'reduced_v': 156, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.129s.
+[Preprocessor] Stats: {'time': 0.05095529556274414, 'orig_v': 156, 'reduced_v': 156, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.136s.
+[Preprocessor] Stats: {'time': 0.414783239364624, 'orig_v': 156, 'reduced_v': 156, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.129s.
+
+--- Running instance: graph17.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.125s.
+[Preprocessor] Stats: {'time': 0.00164031982421875, 'orig_v': 162, 'reduced_v': 162, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.123s.
+[Preprocessor] Stats: {'time': 0.05273008346557617, 'orig_v': 162, 'reduced_v': 162, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.125s.
+[Preprocessor] Stats: {'time': 0.4319472312927246, 'orig_v': 162, 'reduced_v': 162, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.122s.
+
+--- Running instance: graph18.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.151s.
+[Preprocessor] Stats: {'time': 0.0018296241760253906, 'orig_v': 166, 'reduced_v': 166, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.169s.
+[Preprocessor] Stats: {'time': 0.05484628677368164, 'orig_v': 166, 'reduced_v': 166, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.156s.
+[Preprocessor] Stats: {'time': 0.47488927841186523, 'orig_v': 166, 'reduced_v': 166, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.153s.
+
+--- Running instance: graph19.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 7.93s.
+[Preprocessor] Stats: {'time': 0.002846240997314453, 'orig_v': 170, 'reduced_v': 170, 'forced_count': 2, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 6.951s.
+[Preprocessor] Stats: {'time': 0.14424800872802734, 'orig_v': 170, 'reduced_v': 169, 'forced_count': 2, 'forbidden_count': 0, 'contracted_count': 1}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 9.279s.
+[Preprocessor] Stats: {'time': 0.15606951713562012, 'orig_v': 170, 'reduced_v': 169, 'forced_count': 2, 'forbidden_count': 0, 'contracted_count': 1}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 10.156s.
+
+--- Running instance: graph20.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.176s.
+[Preprocessor] Stats: {'time': 0.001562356948852539, 'orig_v': 174, 'reduced_v': 174, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.09s.
+[Preprocessor] Stats: {'time': 0.06405949592590332, 'orig_v': 174, 'reduced_v': 174, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.093s.
+[Preprocessor] Stats: {'time': 0.5282208919525146, 'orig_v': 174, 'reduced_v': 174, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.088s.
+
+--- Running instance: graph21.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.514s.
+[Preprocessor] Stats: {'time': 0.001608133316040039, 'orig_v': 180, 'reduced_v': 180, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.109s.
+[Preprocessor] Stats: {'time': 0.0696709156036377, 'orig_v': 180, 'reduced_v': 180, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.103s.
+[Preprocessor] Stats: {'time': 0.5841999053955078, 'orig_v': 180, 'reduced_v': 180, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.102s.
+
+--- Running instance: graph22.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.584s.
+[Preprocessor] Stats: {'time': 0.001707315444946289, 'orig_v': 186, 'reduced_v': 186, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.14s.
+[Preprocessor] Stats: {'time': 0.08093523979187012, 'orig_v': 186, 'reduced_v': 186, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.14s.
+[Preprocessor] Stats: {'time': 0.5792016983032227, 'orig_v': 186, 'reduced_v': 186, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.142s.
+
+--- Running instance: graph23.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.259s.
+[Preprocessor] Stats: {'time': 0.002354145050048828, 'orig_v': 190, 'reduced_v': 190, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.237s.
+[Preprocessor] Stats: {'time': 0.07013607025146484, 'orig_v': 190, 'reduced_v': 190, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.237s.
+[Preprocessor] Stats: {'time': 0.5902547836303711, 'orig_v': 190, 'reduced_v': 190, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.238s.
+
+--- Running instance: graph24.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.163s.
+[Preprocessor] Stats: {'time': 0.0024492740631103516, 'orig_v': 198, 'reduced_v': 198, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.222s.
+[Preprocessor] Stats: {'time': 0.1455087661743164, 'orig_v': 198, 'reduced_v': 198, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.203s.
+[Preprocessor] Stats: {'time': 0.712515115737915, 'orig_v': 198, 'reduced_v': 198, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.197s.
+
+--- Running instance: graph25.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 1.169s.
+[Preprocessor] Stats: {'time': 0.002582073211669922, 'orig_v': 204, 'reduced_v': 204, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.226s.
+[Preprocessor] Stats: {'time': 0.09310269355773926, 'orig_v': 204, 'reduced_v': 204, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.221s.
+[Preprocessor] Stats: {'time': 0.09720635414123535, 'orig_v': 204, 'reduced_v': 204, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.233s.
+
+--- Running instance: graph26.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.222s.
+[Preprocessor] Stats: {'time': 0.0027701854705810547, 'orig_v': 210, 'reduced_v': 210, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.187s.
+[Preprocessor] Stats: {'time': 0.09259867668151855, 'orig_v': 210, 'reduced_v': 210, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.184s.
+[Preprocessor] Stats: {'time': 0.0869135856628418, 'orig_v': 210, 'reduced_v': 210, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.193s.
+
+--- Running instance: graph27.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.232s.
+[Preprocessor] Stats: {'time': 0.0019145011901855469, 'orig_v': 214, 'reduced_v': 214, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.166s.
+[Preprocessor] Stats: {'time': 0.10392451286315918, 'orig_v': 214, 'reduced_v': 214, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.165s.
+[Preprocessor] Stats: {'time': 0.09749460220336914, 'orig_v': 214, 'reduced_v': 214, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.171s.
+
+--- Running instance: graph28.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.705s.
+[Preprocessor] Stats: {'time': 0.0020194053649902344, 'orig_v': 222, 'reduced_v': 222, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.148s.
+[Preprocessor] Stats: {'time': 0.10673999786376953, 'orig_v': 222, 'reduced_v': 222, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.153s.
+[Preprocessor] Stats: {'time': 0.10511636734008789, 'orig_v': 222, 'reduced_v': 222, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.148s.
+
+--- Running instance: graph29.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.83s.
+[Preprocessor] Stats: {'time': 0.002651214599609375, 'orig_v': 228, 'reduced_v': 228, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.122s.
+[Preprocessor] Stats: {'time': 0.1023871898651123, 'orig_v': 228, 'reduced_v': 228, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.126s.
+[Preprocessor] Stats: {'time': 0.11777019500732422, 'orig_v': 228, 'reduced_v': 228, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...Result:  True
+Result:  True
+Result:  True
+Result:  True
+Result:  True
+
+Time run: 0.127s.
+
+--- Running instance: graph30.hcp ---
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.255s.
+[Preprocessor] Stats: {'time': 0.001924276351928711, 'orig_v': 234, 'reduced_v': 234, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.129s.
+[Preprocessor] Stats: {'time': 0.13141107559204102, 'orig_v': 234, 'reduced_v': 234, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.127s.
+[Preprocessor] Stats: {'time': 0.12655878067016602, 'orig_v': 234, 'reduced_v': 234, 'forced_count': 0, 'forbidden_count': 0, 'contracted_count': 0}
+Input written to src/utils/all_cadical/input.txt.
+
+Running SAT solver...
+Time run: 0.133s.
+
+====================================================================================================
+File / Successor                    | Vars     | Clauses    | Build (s)  | Solve (s)  | Status      
+----------------------------------------------------------------------------------------------------
+graph1.hcp (CRT (Baseline))         | 4950     | 20120      | 0.0178     | 0.1470     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 4950     | 10060      | 0.0082     | 0.1090     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 4950     | 10060      | 0.0157     | 0.1140     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 4950     | 10060      | 0.0800     | 0.1080     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph2.hcp (CRT (Baseline))         | 5530     | 22028      | 0.0084     | 0.0040     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 5530     | 11014      | 0.0088     | 0.0820     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 5530     | 11014      | 0.0178     | 0.0740     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 5530     | 11014      | 0.0874     | 0.0740     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph3.hcp (CRT (Baseline))         | 6786     | 25664      | 0.0093     | 0.0760     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 6786     | 12832      | 0.0101     | 0.0900     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 6786     | 12832      | 0.0218     | 0.0840     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 6786     | 12832      | 0.1152     | 0.0830     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph4.hcp (CRT (Baseline))         | 7812     | 28776      | 0.0104     | 0.0140     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 7812     | 14388      | 0.0115     | 0.0120     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 7812     | 14388      | 0.0447     | 0.0120     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 7812     | 14388      | 0.1256     | 0.0130     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph5.hcp (CRT (Baseline))         | 8910     | 31784      | 0.0120     | 0.0220     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 8910     | 15892      | 0.0170     | 0.1010     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 8910     | 15892      | 0.0288     | 0.1030     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 8910     | 15892      | 0.1534     | 0.1010     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph6.hcp (CRT (Baseline))         | 9682     | 34076      | 0.0128     | 0.0960     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 9682     | 17038      | 0.0138     | 0.0200     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 9682     | 17038      | 0.0363     | 0.0330     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 9682     | 17038      | 0.1565     | 0.0210     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph7.hcp (CRT (Baseline))         | 11322    | 38480      | 0.0151     | 0.1110     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 11322    | 19240      | 0.0150     | 0.0810     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 11322    | 19240      | 0.0390     | 0.0770     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 11322    | 19240      | 0.1935     | 0.0790     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph8.hcp (CRT (Baseline))         | 12636    | 42168      | 0.0163     | 0.1370     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 12636    | 21084      | 0.0169     | 0.0680     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 12636    | 21084      | 0.0391     | 0.0670     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 12636    | 21084      | 0.2141     | 0.0690     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph9.hcp (CRT (Baseline))         | 14022    | 45752      | 0.0167     | 0.1210     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 14022    | 22876      | 0.0179     | 0.0890     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 14022    | 22876      | 0.0547     | 0.0850     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 14022    | 22876      | 0.2425     | 0.0860     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph10.hcp (CRT (Baseline))        | 14986    | 48428      | 0.0236     | 0.1310     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 14986    | 24214      | 0.0193     | 0.1890     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 14986    | 24214      | 0.0499     | 0.1990     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 14986    | 24214      | 0.2786     | 0.1850     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph11.hcp (CRT (Baseline))        | 17010    | 53600      | 0.0306     | 0.1410     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 17010    | 26800      | 0.0211     | 0.4790     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 17010    | 26800      | 0.0642     | 0.4730     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 17010    | 26800      | 0.2838     | 0.4660     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph12.hcp (CRT (Baseline))        | 18612    | 57864      | 0.0214     | 0.0310     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 18612    | 28932      | 0.0301     | 0.2970     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 18612    | 28932      | 0.0701     | 0.3040     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 18612    | 28932      | 0.3213     | 0.2980     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph13.hcp (CRT (Baseline))        | 20286    | 62024      | 0.0302     | 0.1380     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 20286    | 31012      | 0.0348     | 0.1360     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 20286    | 31012      | 0.0750     | 0.1350     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 20286    | 31012      | 0.3604     | 0.1380     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph14.hcp (CRT (Baseline))        | 21442    | 65084      | 0.0254     | 0.1580     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 21442    | 32542      | 0.0291     | 0.1060     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 21442    | 32542      | 0.0829     | 0.1060     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 21442    | 32542      | 0.3774     | 0.1060     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph15.hcp (CRT (Baseline))        | 23850    | 71024      | 0.0433     | 0.1590     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 23850    | 35512      | 0.0538     | 0.1630     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 23850    | 35512      | 0.0952     | 0.1780     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 23850    | 35512      | 0.4194     | 0.1650     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph16.hcp (CRT (Baseline))        | 25740    | 75864      | 0.0278     | 0.1220     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 25740    | 37932      | 0.0478     | 0.1290     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 25740    | 37932      | 0.0973     | 0.1360     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 25740    | 37932      | 0.4604     | 0.1290     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph17.hcp (CRT (Baseline))        | 27702    | 80600      | 0.0442     | 0.1250     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 27702    | 40300      | 0.0537     | 0.1230     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 27702    | 40300      | 0.1028     | 0.1250     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 27702    | 40300      | 0.4792     | 0.1220     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph18.hcp (CRT (Baseline))        | 29050    | 84044      | 0.0483     | 0.1510     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 29050    | 42022      | 0.0485     | 0.1690     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 29050    | 42022      | 0.0983     | 0.1560     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 29050    | 42022      | 0.5055     | 0.1530     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph19.hcp (CRT (Baseline))        | 30710    | 104080     | 0.0404     | 7.9300     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 30570    | 52042      | 0.0640     | 6.9510     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 30222    | 51390      | 0.2007     | 9.2790     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 30222    | 51390      | 0.2017     | 10.1560    | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph20.hcp (CRT (Baseline))        | 31842    | 90752      | 0.0369     | 0.1760     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 31842    | 45376      | 0.0622     | 0.0900     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 31842    | 45376      | 0.1197     | 0.0930     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 31842    | 45376      | 0.5774     | 0.0880     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph21.hcp (CRT (Baseline))        | 34020    | 96168      | 0.0375     | 0.5140     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 34020    | 48084      | 0.0634     | 0.1090     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 34020    | 48084      | 0.1272     | 0.1030     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 34020    | 48084      | 0.6213     | 0.1020     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph22.hcp (CRT (Baseline))        | 36270    | 101480     | 0.0687     | 0.5840     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 36270    | 50740      | 0.0672     | 0.1400     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 36270    | 50740      | 0.1300     | 0.1400     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 36270    | 50740      | 0.6446     | 0.1420     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph23.hcp (CRT (Baseline))        | 37810    | 105308     | 0.0697     | 0.2590     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 37810    | 52654      | 0.0594     | 0.2370     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 37810    | 52654      | 0.1436     | 0.2370     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 37810    | 52654      | 0.6563     | 0.2380     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph24.hcp (CRT (Baseline))        | 40986    | 112784     | 0.0688     | 0.1630     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 40986    | 56392      | 0.0804     | 0.2220     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 40986    | 56392      | 0.2400     | 0.2030     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 40986    | 56392      | 0.7938     | 0.1970     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph25.hcp (CRT (Baseline))        | 43452    | 118776     | 0.0554     | 1.1690     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 43452    | 59388      | 0.0897     | 0.2260     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 43452    | 59388      | 0.1773     | 0.2210     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 43452    | 59388      | 0.1658     | 0.2330     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph26.hcp (CRT (Baseline))        | 46200    | 129688     | 0.0766     | 0.2220     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 46200    | 64844      | 0.0822     | 0.1870     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 46200    | 64844      | 0.1816     | 0.1840     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 46200    | 64844      | 0.1729     | 0.1930     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph27.hcp (CRT (Baseline))        | 47936    | 134012     | 0.0825     | 0.2320     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 47936    | 67006      | 0.0777     | 0.1660     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 47936    | 67006      | 0.1982     | 0.1650     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 47936    | 67006      | 0.1939     | 0.1710     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph28.hcp (CRT (Baseline))        | 51504    | 142432     | 0.0908     | 0.7050     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 51504    | 71216      | 0.0868     | 0.1480     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 51504    | 71216      | 0.2074     | 0.1530     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 51504    | 71216      | 0.1981     | 0.1480     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph29.hcp (CRT (Baseline))        | 54264    | 149160     | 0.1234     | 0.8300     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 54264    | 74580      | 0.1307     | 0.1220     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 54264    | 74580      | 0.1948     | 0.1260     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 54264    | 74580      | 0.2457     | 0.1270     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+graph30.hcp (CRT (Baseline))        | 57096    | 155752     | 0.1024     | 0.2550     | SUCCESS     
+  └─ CRT (P1: Cascade only)         | 57096    | 77876      | 0.0980     | 0.1290     | SUCCESS     
+  └─ CRT (P1+P2: Contraction)       | 57096    | 77876      | 0.2753     | 0.1270     | SUCCESS     
+  └─ CRT (P1+P2+P3: Probing)        | 57096    | 77876      | 0.2261     | 0.1330     | SUCCESS     
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+

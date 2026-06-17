@@ -21,7 +21,8 @@ from libs.models.successor.vee import Vee
 from libs.models.successor.ocrt import OCRT
 from libs.models.successor.inc_crt import IncCRT
 from libs.models.successor.inc_ocrt import IncOCRT
-
+from libs.models.successor.ounary import OUnary
+from libs.models.successor.pruning_crt import PruningCRT
 
 def verify_hamiltonian_cycle(HCP, graph, N):
     if len(HCP) != N:
@@ -76,6 +77,8 @@ def run_benchmark(graph_path, solver_name):
         ("Vee", lambda enc: Vee(enc)),
         ("OCRT", lambda enc: OCRT(vee_encoder=NSCEncoding(), crt_encoder=enc)),
         ("IncOCRT", lambda enc: IncOCRT(vee_encoder=NSCEncoding(), crt_encoder=enc)),
+        ("OUnary", lambda enc: OUnary(vee_encoder=NSCEncoding())),
+        ("PruningCRT", lambda enc: PruningCRT(enc)),
      ]
 
     print(f"Graph: {os.path.basename(graph_path)}")
