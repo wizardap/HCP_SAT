@@ -1,0 +1,108 @@
+{
+    "graph1.hcp": {
+        "CRT": [
+            {
+                "seed": 0,
+                "time": 0.101,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 0.021,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 0.142,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 0.102,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 0.019,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 0.105,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 0.019,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 0.116,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 0.135,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 0.017,
+                "status": "SAT"
+            }
+        ],
+        "PruningCRT": [
+            {
+                "seed": 0,
+                "time": 0.116,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 0.184,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 0.116,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 0.146,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 0.139,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 0.101,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 0.017,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 0.009,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 0.132,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 0.098,
+                "status": "SAT"
+            }
+        ]
+    }
+}

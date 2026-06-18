@@ -1,0 +1,4 @@
+
+# --- New Benchmark Batch: 2026-06-18 09:44:43 ---
+graph1.hcp_CRT                 4950       10060      SAT         0.017      valid     
+graph1.hcp_PruningCRT          792        5902       SAT         0.098      valid     
