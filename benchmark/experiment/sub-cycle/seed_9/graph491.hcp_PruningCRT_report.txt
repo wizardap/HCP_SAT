@@ -1,0 +1,44 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			sat-experiment
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	602 seconds
+[runlim] space limit:		32101 MB
+[runlim] argv[0]:		/home/ubuntu/HCP_SAT/.venv/bin/python
+[runlim] argv[1]:		src/utils/all_cadical/cadical.py
+[runlim] start:			Thu Jun 18 17:57:59 2026
+[runlim] child:			22682
+[runlim] sample:		10.00 time, 10.01 real, 128 MB, 1.08 load
+[runlim] sample:		20.00 time, 20.01 real, 142 MB, 1.07 load
+[runlim] sample:		29.99 time, 30.01 real, 144 MB, 1.06 load
+[runlim] sample:		39.99 time, 40.01 real, 132 MB, 1.13 load
+[runlim] sample:		49.99 time, 50.01 real, 177 MB, 1.11 load
+[runlim] sample:		59.99 time, 60.01 real, 135 MB, 1.09 load
+[runlim] sample:		69.98 time, 70.01 real, 162 MB, 1.16 load
+[runlim] sample:		79.99 time, 80.01 real, 136 MB, 1.13 load
+[runlim] sample:		89.98 time, 90.01 real, 136 MB, 1.11 load
+[runlim] sample:		99.98 time, 100.01 real, 134 MB, 1.09 load
+[runlim] sample:		109.97 time, 110.01 real, 138 MB, 1.08 load
+[runlim] sample:		119.97 time, 120.01 real, 136 MB, 1.07 load
+[runlim] sample:		129.97 time, 130.01 real, 192 MB, 1.06 load
+[runlim] sample:		139.97 time, 140.01 real, 192 MB, 1.05 load
+[runlim] sample:		149.97 time, 150.01 real, 265 MB, 1.04 load
+[runlim] sample:		159.97 time, 160.01 real, 192 MB, 1.03 load
+[runlim] sample:		169.97 time, 170.01 real, 192 MB, 1.10 load
+[runlim] sample:		179.96 time, 180.01 real, 136 MB, 1.16 load
+[runlim] sample:		189.96 time, 190.01 real, 142 MB, 1.13 load
+[runlim] sample:		199.96 time, 200.01 real, 143 MB, 1.11 load
+[runlim] sample:		209.96 time, 210.01 real, 147 MB, 1.10 load
+[runlim] sample:		219.95 time, 220.01 real, 147 MB, 1.08 load
+[runlim] sample:		229.96 time, 230.01 real, 148 MB, 1.07 load
+[runlim] sample:		239.96 time, 240.01 real, 148 MB, 1.06 load
+[runlim] sample:		249.96 time, 250.01 real, 149 MB, 1.05 load
+[runlim] end:			Thu Jun 18 18:02:15 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		1
+[runlim] processes:		2
+[runlim] real:			256.10 seconds
+[runlim] time:			255.95 seconds
+[runlim] space:			265 MB
+[runlim] load:			1.17 maximum
+[runlim] samples:		2561

@@ -1,0 +1,31 @@
+[runlim] version:		2.0.0rc12
+[runlim] host:			sat-experiment
+[runlim] time limit:		311040000 seconds
+[runlim] real time limit:	602 seconds
+[runlim] space limit:		32101 MB
+[runlim] argv[0]:		/home/ubuntu/HCP_SAT/.venv/bin/python
+[runlim] argv[1]:		src/utils/all_cadical/cadical.py
+[runlim] start:			Thu Jun 18 20:56:57 2026
+[runlim] child:			26211
+[runlim] sample:		10.00 time, 10.01 real, 2455 MB, 1.25 load
+[runlim] sample:		20.00 time, 20.01 real, 2486 MB, 1.21 load
+[runlim] sample:		29.99 time, 30.01 real, 2494 MB, 1.18 load
+[runlim] sample:		39.99 time, 40.01 real, 623 MB, 1.15 load
+[runlim] sample:		49.99 time, 50.01 real, 623 MB, 1.21 load
+[runlim] sample:		59.98 time, 60.01 real, 623 MB, 1.25 load
+[runlim] sample:		69.98 time, 70.01 real, 623 MB, 1.21 load
+[runlim] sample:		79.97 time, 80.01 real, 623 MB, 1.18 load
+[runlim] sample:		89.97 time, 90.01 real, 623 MB, 1.15 load
+[runlim] sample:		99.97 time, 100.01 real, 623 MB, 1.12 load
+[runlim] sample:		109.97 time, 110.01 real, 623 MB, 1.18 load
+[runlim] sample:		119.97 time, 120.01 real, 1201 MB, 1.15 load
+[runlim] end:			Thu Jun 18 20:58:58 2026
+[runlim] status:		ok
+[runlim] result:		0
+[runlim] children:		1
+[runlim] processes:		2
+[runlim] real:			120.86 seconds
+[runlim] time:			120.40 seconds
+[runlim] space:			2573 MB
+[runlim] load:			1.29 maximum
+[runlim] samples:		1209

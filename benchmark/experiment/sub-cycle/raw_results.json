@@ -1,106 +1,1908 @@
 {
-    "graph1.hcp": {
+    "graph162.hcp": {
         "CRT": [
             {
                 "seed": 0,
-                "time": 0.101,
+                "time": 28.7,
                 "status": "SAT"
             },
             {
                 "seed": 1,
-                "time": 0.021,
+                "time": 29.178,
                 "status": "SAT"
             },
             {
                 "seed": 2,
-                "time": 0.142,
+                "time": 31.497,
                 "status": "SAT"
             },
             {
                 "seed": 3,
-                "time": 0.102,
+                "time": 28.661,
                 "status": "SAT"
             },
             {
                 "seed": 4,
-                "time": 0.019,
+                "time": 37.569,
                 "status": "SAT"
             },
             {
                 "seed": 5,
-                "time": 0.105,
+                "time": 25.588,
                 "status": "SAT"
             },
             {
                 "seed": 6,
-                "time": 0.019,
+                "time": 32.84,
                 "status": "SAT"
             },
             {
                 "seed": 7,
-                "time": 0.116,
+                "time": 31.247,
                 "status": "SAT"
             },
             {
                 "seed": 8,
-                "time": 0.135,
+                "time": 28.797,
                 "status": "SAT"
             },
             {
                 "seed": 9,
-                "time": 0.017,
+                "time": 43.487,
                 "status": "SAT"
             }
         ],
         "PruningCRT": [
             {
                 "seed": 0,
-                "time": 0.116,
+                "time": 27.025,
                 "status": "SAT"
             },
             {
                 "seed": 1,
-                "time": 0.184,
+                "time": 31.484,
                 "status": "SAT"
             },
             {
                 "seed": 2,
-                "time": 0.116,
+                "time": 30.436,
                 "status": "SAT"
             },
             {
                 "seed": 3,
-                "time": 0.146,
+                "time": 34.116,
                 "status": "SAT"
             },
             {
                 "seed": 4,
-                "time": 0.139,
+                "time": 32.162,
                 "status": "SAT"
             },
             {
                 "seed": 5,
-                "time": 0.101,
+                "time": 32.196,
                 "status": "SAT"
             },
             {
                 "seed": 6,
-                "time": 0.017,
+                "time": 32.626,
                 "status": "SAT"
             },
             {
                 "seed": 7,
-                "time": 0.009,
+                "time": 44.987,
                 "status": "SAT"
             },
             {
                 "seed": 8,
-                "time": 0.132,
+                "time": 31.861,
                 "status": "SAT"
             },
             {
                 "seed": 9,
-                "time": 0.098,
+                "time": 28.497,
+                "status": "SAT"
+            }
+        ]
+    },
+    "graph171.hcp": {
+        "CRT": [
+            {
+                "seed": 0,
+                "time": 10.474,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 25.594,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 8.589,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 23.342,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 17.634,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 20.436,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 12.281,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 17.394,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 25.062,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 22.512,
+                "status": "SAT"
+            }
+        ],
+        "PruningCRT": [
+            {
+                "seed": 0,
+                "time": 10.382,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 25.686,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 12.162,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 11.059,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 21.794,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 22.323,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 10.41,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 9.606,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 8.587,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 9.547,
+                "status": "SAT"
+            }
+        ]
+    },
+    "graph197.hcp": {
+        "CRT": [
+            {
+                "seed": 0,
+                "time": 9.102,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 5.487,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 13.551,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 12.058,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 26.406,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 15.392,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 31.425,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 11.823,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 27.456,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 12.237,
+                "status": "SAT"
+            }
+        ],
+        "PruningCRT": [
+            {
+                "seed": 0,
+                "time": 23.502,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 14.805,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 9.856,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 26.175,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 22.759,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 15.946,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 29.008,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 13.367,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 15.485,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 19.11,
+                "status": "SAT"
+            }
+        ]
+    },
+    "graph223.hcp": {
+        "CRT": [
+            {
+                "seed": 0,
+                "time": 42.723,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 2,
+                "time": 30.072,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 51.613,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 98.243,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 137.606,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 170.715,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 30.816,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 48.051,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 39.032,
+                "status": "SAT"
+            }
+        ],
+        "PruningCRT": [
+            {
+                "seed": 0,
+                "time": 139.903,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 117.472,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 41.414,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 43.173,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 175.233,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 46.852,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 75.464,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 43.854,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 131.096,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 41.755,
+                "status": "SAT"
+            }
+        ]
+    },
+    "graph237.hcp": {
+        "CRT": [
+            {
+                "seed": 0,
+                "time": 36.474,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 20.476,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 37.856,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 31.086,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 31.405,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 17.671,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 21.758,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 38.644,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 29.429,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 31.973,
+                "status": "SAT"
+            }
+        ],
+        "PruningCRT": [
+            {
+                "seed": 0,
+                "time": 18.784,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 10.962,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 36.276,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 18.268,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 32.598,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 35.785,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 36.752,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 33.273,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 32.378,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 40.108,
+                "status": "SAT"
+            }
+        ]
+    },
+    "graph249.hcp": {
+        "CRT": [
+            {
+                "seed": 0,
+                "time": 4.394,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 8.194,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 6.648,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 23.714,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 5.974,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 13.955,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 5.61,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 8.707,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 2.047,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 6.912,
+                "status": "SAT"
+            }
+        ],
+        "PruningCRT": [
+            {
+                "seed": 0,
+                "time": 9.71,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 12.356,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 7.92,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 10.359,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 10.52,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 3.76,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 12.884,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 4.093,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 6.147,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 9.572,
+                "status": "SAT"
+            }
+        ]
+    },
+    "graph252.hcp": {
+        "CRT": [
+            {
+                "seed": 0,
+                "time": 62.679,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 46.394,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 18.478,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 44.387,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 31.35,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 35.667,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 42.837,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 22.231,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 84.476,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 88.946,
+                "status": "SAT"
+            }
+        ],
+        "PruningCRT": [
+            {
+                "seed": 0,
+                "time": 13.935,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 43.981,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 43.308,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 29.179,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 41.589,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 17.622,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 35.119,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 43.071,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 38.791,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 39.84,
+                "status": "SAT"
+            }
+        ]
+    },
+    "graph254.hcp": {
+        "CRT": [
+            {
+                "seed": 0,
+                "time": 7.363,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 11.614,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 13.51,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 6.8,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 8.79,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 9.498,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 9.907,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 12.465,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 11.238,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 8.851,
+                "status": "SAT"
+            }
+        ],
+        "PruningCRT": [
+            {
+                "seed": 0,
+                "time": 6.442,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 6.523,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 3.289,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 10.45,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 7.477,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 4.067,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 14.339,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 6.427,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 3.443,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 5.807,
+                "status": "SAT"
+            }
+        ]
+    },
+    "graph255.hcp": {
+        "CRT": [
+            {
+                "seed": 0,
+                "time": 18.505,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 11.407,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 21.299,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 17.247,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 14.796,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 17.63,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 18.946,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 16.157,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 14.556,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 15.958,
+                "status": "SAT"
+            }
+        ],
+        "PruningCRT": [
+            {
+                "seed": 0,
+                "time": 19.492,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 19.729,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 76.253,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 19.404,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 11.395,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 16.814,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 18.292,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 13.869,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 17.2,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 10.517,
+                "status": "SAT"
+            }
+        ]
+    },
+    "graph424.hcp": {
+        "CRT": [
+            {
+                "seed": 0,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 1,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 2,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 3,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 4,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 5,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 6,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 7,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 8,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 9,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            }
+        ],
+        "PruningCRT": [
+            {
+                "seed": 0,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 1,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 2,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 3,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 4,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 5,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 6,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 7,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 8,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 9,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            }
+        ]
+    },
+    "graph446.hcp": {
+        "CRT": [
+            {
+                "seed": 0,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 1,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 2,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 3,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 4,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 5,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 6,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 7,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 8,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 9,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            }
+        ],
+        "PruningCRT": [
+            {
+                "seed": 0,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 1,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 2,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 3,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 4,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 5,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 6,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 7,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 8,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 9,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            }
+        ]
+    },
+    "graph470.hcp": {
+        "CRT": [
+            {
+                "seed": 0,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 1,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 2,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 3,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 4,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 5,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 6,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 7,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 8,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 9,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            }
+        ],
+        "PruningCRT": [
+            {
+                "seed": 0,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 1,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 2,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 3,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 4,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 5,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 6,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 7,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 8,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            },
+            {
+                "seed": 9,
+                "time": 600.0,
+                "status": "TIMEOUT"
+            }
+        ]
+    },
+    "graph48.hcp": {
+        "CRT": [
+            {
+                "seed": 0,
+                "time": 158.979,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 99.505,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 137.299,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 209.135,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 214.853,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 188.816,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 105.958,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 140.01,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 114.846,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 92.283,
+                "status": "SAT"
+            }
+        ],
+        "PruningCRT": [
+            {
+                "seed": 0,
+                "time": 104.802,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 129.356,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 139.591,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 166.702,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 76.413,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 204.798,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 253.091,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 93.231,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 104.251,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 136.396,
+                "status": "SAT"
+            }
+        ]
+    },
+    "graph491.hcp": {
+        "CRT": [
+            {
+                "seed": 0,
+                "time": 82.28,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 92.542,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 224.669,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 234.396,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 79.691,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 87.897,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 78.477,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 260.628,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 78.739,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 87.947,
+                "status": "SAT"
+            }
+        ],
+        "PruningCRT": [
+            {
+                "seed": 0,
+                "time": 245.04,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 90.41,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 76.308,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 99.894,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 99.923,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 81.401,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 153.342,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 73.258,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 62.569,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 254.342,
+                "status": "SAT"
+            }
+        ]
+    },
+    "graph506.hcp": {
+        "CRT": [
+            {
+                "seed": 0,
+                "time": 202.522,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 106.566,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 79.291,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 276.76,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 84.956,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 262.808,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 207.374,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 267.737,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 251.771,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 196.601,
+                "status": "SAT"
+            }
+        ],
+        "PruningCRT": [
+            {
+                "seed": 0,
+                "time": 189.921,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 140.978,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 86.453,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 214.615,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 340.144,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 81.38,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 83.908,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 286.789,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 313.523,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 114.931,
+                "status": "SAT"
+            }
+        ]
+    },
+    "graph522.hcp": {
+        "CRT": [
+            {
+                "seed": 0,
+                "time": 85.285,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 280.409,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 275.652,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 92.675,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 80.892,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 238.505,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 296.003,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 102.528,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 83.797,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 285.928,
+                "status": "SAT"
+            }
+        ],
+        "PruningCRT": [
+            {
+                "seed": 0,
+                "time": 252.575,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 594.923,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 300.026,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 264.356,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 163.925,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 80.668,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 117.403,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 92.042,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 88.453,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 115.589,
+                "status": "SAT"
+            }
+        ]
+    },
+    "graph526.hcp": {
+        "CRT": [
+            {
+                "seed": 0,
+                "time": 412.245,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 93.04,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 237.67,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 84.249,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 134.208,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 199.777,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 233.732,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 203.875,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 243.838,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 93.574,
+                "status": "SAT"
+            }
+        ],
+        "PruningCRT": [
+            {
+                "seed": 0,
+                "time": 79.913,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 77.559,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 79.167,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 259.034,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 235.523,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 116.599,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 88.689,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 78.94,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 137.861,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 80.259,
+                "status": "SAT"
+            }
+        ]
+    },
+    "graph529.hcp": {
+        "CRT": [
+            {
+                "seed": 0,
+                "time": 93.352,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 145.433,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 330.288,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 108.093,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 92.833,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 207.449,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 105.471,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 109.603,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 154.107,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 334.575,
+                "status": "SAT"
+            }
+        ],
+        "PruningCRT": [
+            {
+                "seed": 0,
+                "time": 279.054,
+                "status": "SAT"
+            },
+            {
+                "seed": 1,
+                "time": 235.55,
+                "status": "SAT"
+            },
+            {
+                "seed": 2,
+                "time": 199.388,
+                "status": "SAT"
+            },
+            {
+                "seed": 3,
+                "time": 360.583,
+                "status": "SAT"
+            },
+            {
+                "seed": 4,
+                "time": 207.575,
+                "status": "SAT"
+            },
+            {
+                "seed": 5,
+                "time": 230.568,
+                "status": "SAT"
+            },
+            {
+                "seed": 6,
+                "time": 317.219,
+                "status": "SAT"
+            },
+            {
+                "seed": 7,
+                "time": 214.669,
+                "status": "SAT"
+            },
+            {
+                "seed": 8,
+                "time": 105.015,
+                "status": "SAT"
+            },
+            {
+                "seed": 9,
+                "time": 146.628,
                 "status": "SAT"
             }
         ]

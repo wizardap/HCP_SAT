@@ -2,3 +2,41 @@
 # --- New Benchmark Batch: 2026-06-18 09:44:43 ---
 graph1.hcp_CRT                 4950       10060      SAT         0.019      valid     
 graph1.hcp_PruningCRT          792        5902       SAT         0.017      valid     
+
+# --- New Benchmark Batch: 2026-06-18 02:48:49 ---
+graph162.hcp_CRT               1661647    21068364   SAT         32.84      valid     
+graph162.hcp_PruningCRT        1248508    20655225   SAT         32.626     valid     
+graph171.hcp_CRT               1003980    1132478    SAT         12.281     valid     
+graph171.hcp_PruningCRT        14954      143452     SAT         10.41      valid     
+graph197.hcp_CRT               1425612    1578878    SAT         31.425     valid     
+graph197.hcp_PruningCRT        17834      171100     SAT         29.008     valid     
+graph223.hcp_CRT               1941324    2137835    SAT         170.715    valid     
+graph223.hcp_PruningCRT        24864      221375     SAT         75.464     valid     
+graph237.hcp_CRT               2196300    2386718    SAT         21.758     valid     
+graph237.hcp_PruningCRT        22154      212572     SAT         36.752     valid     
+graph249.hcp_CRT               2446072    2647068    SAT         5.61       valid     
+graph249.hcp_PruningCRT        23384      224380     SAT         12.884     valid     
+graph252.hcp_CRT               2490060    2692862    SAT         42.837     valid     
+graph252.hcp_PruningCRT        23594      226396     SAT         35.119     valid     
+graph254.hcp_CRT               2521720    2725812    SAT         9.907      valid     
+graph254.hcp_PruningCRT        23744      227836     SAT         14.339     valid     
+graph255.hcp_CRT               2532552    2776601    SAT         18.946     valid     
+graph255.hcp_PruningCRT        29094      273143     SAT         18.292     valid     
+graph424.hcp_CRT               6119390    6570626    TIMEOUT     600.0      None      
+graph424.hcp_PruningCRT        46714      497950     TIMEOUT     600.0      None      
+graph446.hcp_CRT               6578196    7042841    TIMEOUT     600.0      None      
+graph446.hcp_PruningCRT        48683      513328     TIMEOUT     600.0      None      
+graph470.hcp_CRT               7548724    8027064    TIMEOUT     600.0      None      
+graph470.hcp_PruningCRT        50142      528482     TIMEOUT     600.0      None      
+graph48.hcp_CRT                120052     167823     SAT         105.958    valid     
+graph48.hcp_PruningCRT         7360       55131      SAT         253.091    valid     
+graph491.hcp_CRT               8125320    8574680    SAT         78.477     valid     
+graph491.hcp_PruningCRT        45518      494878     SAT         153.342    valid     
+graph506.hcp_CRT               8823840    9292160    SAT         207.374    valid     
+graph506.hcp_PruningCRT        47438      515758     SAT         83.908     valid     
+graph522.hcp_CRT               9403392    9886880    SAT         296.003    valid     
+graph522.hcp_PruningCRT        48974      532462     SAT         117.403    valid     
+graph526.hcp_CRT               9700080    10191152   SAT         233.732    valid     
+graph526.hcp_PruningCRT        49742      540814     SAT         88.689     valid     
+graph529.hcp_CRT               9850152    10345016   SAT         105.471    valid     
+graph529.hcp_PruningCRT        50126      544990     SAT         317.219    valid     
