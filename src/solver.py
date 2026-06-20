@@ -72,17 +72,53 @@ class HcpSolver:
         sat_solver.delete()
         return result
 
-    def solve_cadical(self):
-        # Build clauses into self.context
+    def _solve_with_cpp(self, use_propagator=True):
+        import subprocess
+        
+        # Build initial clauses into self.context
         self.successor.build_clauses(self.context, self.graph)
         cnf = self.context.cnf.clauses
+        
+        metadata = []
+        if use_propagator:
+            metadata.append(f"c hcp_metadata {self.graph.v} {1 if self.graph.is_directed else 0}")
+            for i in range(1, self.graph.v + 1):
+                for j in range(1, self.graph.v + 1):
+                    var_id = self.successor.getH(i, j)
+                    if var_id > 0:
+                        metadata.append(f"c edge {var_id} {i} {j}")
+        
+        dimacs_lines = metadata
+        dimacs_lines.append(f"p cnf {self.context.total_vars()} {len(cnf)}")
+        for clause in cnf:
+            dimacs_lines.append(" ".join(map(str, clause)) + " 0")
+        
+        dimacs_content = "\n".join(dimacs_lines) + "\n"
+        
+        print("Running C++ SAT Solver (CaDiCaL Native)...")
+        # Ensure executable exists, compile if not
+        cpp_exe = "./src/cpp/hcp_solver"
+        if not os.path.exists(cpp_exe):
+            print("Compiling C++ solver...")
+            os.system(f"g++ -O3 -std=c++17 src/cpp/hcp_solver.cpp -o {cpp_exe} -lcadical -lpthread")
 
-        input_file = 'src/utils/all_cadical/input.txt'
-        output_file = 'src/utils/all_cadical/output.txt'
-
-        # Ensure the directory exists
-        os.makedirs(os.path.dirname(input_file), exist_ok=True)
-
+        process = subprocess.Popen(
+            [cpp_exe, "-", str(TIME_BUDGET)],
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True
+        )
+        
+        try:
+            stdout_data, stderr_data = process.communicate(input=dimacs_content, timeout=TIME_BUDGET + 10)
+        except subprocess.TimeoutExpired:
+            process.kill()
+            stdout_data, stderr_data = process.communicate()
+            
+        if stderr_data:
+            print(stderr_data, file=sys.stderr, end="")
+            
         result = {
             "nofVariables": self.context.total_vars(),
             "nofClauses": len(cnf),
@@ -91,65 +127,20 @@ class HcpSolver:
             "time": TIME_BUDGET,
             "vOfHC": None
         }
-
-        print("Running SAT solver with Iterative Deepening Restarts...")
-        total_time = 0.0
-        current_limit = 5.0 # Start with a 5-second limit
-        attempt = 1
-
-        while total_time < TIME_BUDGET:
-            # Seed diversification: shuffle clauses
-            random.shuffle(cnf)
-            
-            # Write each clause to the file
-            with open(input_file, 'w') as writer:
-                for clause in cnf:
-                    writer.write(" ".join(map(str, clause)) + "\n")
-            
-            # Bound the limit so we don't exceed TIME_BUDGET
-            if total_time + current_limit > TIME_BUDGET:
-                current_limit = TIME_BUDGET - total_time
-            
-            print(f"Attempt {attempt}: limit {current_limit}s, elapsed {total_time:.1f}s")
-            
-            # Add +2 for runlim margin
-            bashCommand = f"./src/utils/all_cadical/runlim -r {int(current_limit + 2)} -o src/utils/all_cadical/report.txt {sys.executable} src/utils/all_cadical/cadical.py"
-            
-            t_start = time.time()
-            os.system(bashCommand)
-            t_elapsed = time.time() - t_start
-            
-            total_time += t_elapsed
-            
-            # Handle output
-            success = False
-            try:
-                with open(output_file, 'r') as file:
-                    lines = file.readlines()
-                if lines and lines[0] != "-1\n":
-                    time_run = float(lines[1])
-                    print(f"Time run: {time_run}s.")
-                    if lines[0] == "0\n":
-                        result["status"] = "UNSAT"
-                    else:
-                        result["status"] = "SAT"
-                        result["model"] = list(map(int, lines[2].split()))
-                    # We report total elapsed time across all attempts
-                    result["time"] = total_time 
-                    success = True
-                os.remove(output_file)
-            except FileNotFoundError:
-                pass
+        
+        for line in stdout_data.splitlines():
+            if line.startswith("STATUS:"):
+                result["status"] = line.split()[1]
+            elif line.startswith("TIME:"):
+                result["time"] = float(line.split()[1])
+            elif line.startswith("MODEL:"):
+                model_str = line[len("MODEL:"):].strip()
+                result["model"] = list(map(int, model_str.split()))
                 
-            if success:
-                return result
-                
-            # If it failed/timed out, double the time limit for next attempt
-            current_limit *= 2
-            attempt += 1
-
-        print("Overall TIME_BUDGET exceeded across all attempts.")
         return result
+
+    def solve_cadical(self):
+        return self._solve_with_cpp(use_propagator=False)
 
     def print_result(self, model, getH, result):
         N = self.graph.v
@@ -290,91 +281,5 @@ class IncHcpSolver(HcpSolver):
         return result
 
     def solve_cadical(self):
-        import time
-        # Build initial clauses into self.context
-        self.successor.build_clauses(self.context, self.graph)
-        cnf = self.context.cnf.clauses
-
-        input_file = 'src/utils/all_cadical/input.txt'
-        output_file = 'src/utils/all_cadical/output.txt'
-
-        # Ensure the directory exists
-        os.makedirs(os.path.dirname(input_file), exist_ok=True)
-
-        # Write each clause to the file
-        with open(input_file, 'w') as writer:
-            for clause in cnf:
-                writer.write(" ".join(map(str, clause)) + "\n")
-        print(f"Initial input written to {input_file}.\n")
-
-        result = {
-            "nofVariables": self.context.total_vars(),
-            "nofClauses": len(cnf),
-            "status": "TIMEOUT",
-            "model": None,
-            "time": TIME_BUDGET,
-            "vOfHC": None
-        }
-
-        start_time = time.time()
-        timeout = TIME_BUDGET
-
-        while True:
-            elapsed = time.time() - start_time
-            if elapsed >= timeout:
-                result["status"] = "TIMEOUT"
-                result["time"] = timeout
-                break
-
-            print("Running SAT solver (CaDiCaL)...")
-            remaining_time = int(timeout - elapsed)
-            bashCommand = f"./src/utils/all_cadical/runlim -r {remaining_time + 10} -o src/utils/all_cadical/report.txt {sys.executable} src/utils/all_cadical/cadical.py"
-            os.system(bashCommand)
-
-            # Read output
-            try:
-                with open(output_file, 'r') as file:
-                    lines = file.readlines()
-                os.remove(output_file)
-            except FileNotFoundError:
-                print(f"Output file '{output_file}' not found.")
-                result["status"] = "TIMEOUT"
-                result["time"] = timeout
-                break
-
-            if not lines or lines[0] == "-1\n":
-                result["status"] = "TIMEOUT"
-                result["time"] = timeout
-                break
-
-            if lines[0] == "0\n":
-                result["status"] = "UNSAT"
-                result["time"] = time.time() - start_time
-                break
-            else:
-                model = list(map(int, lines[2].split()))
-                subcycles = self.find_all_cycles(model)
-
-                if len(subcycles) == 1 and len(subcycles[0]) == self.graph.v:
-                    result["status"] = "SAT"
-                    result["model"] = model
-                    result["time"] = time.time() - start_time
-                    break
-                else:
-                    new_clauses = []
-                    for cycle in subcycles:
-                        clause_cw = [-self.successor.getH(u, v) for u, v in cycle]
-                        new_clauses.append(clause_cw)
-                        
-                        if not self.graph.is_directed:
-                            clause_ccw = [-self.successor.getH(v, u) for u, v in cycle]
-                            new_clauses.append(clause_ccw)
-                    
-                    with open(input_file, 'a') as writer:
-                        for clause in new_clauses:
-                            writer.write(" ".join(map(str, clause)) + "\n")
-                    
-                    result["nofClauses"] += len(new_clauses)
-                    
-        return result
+        return self._solve_with_cpp(use_propagator=True)
 

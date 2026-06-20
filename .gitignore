@@ -3,3 +3,4 @@
 src_ref/
 **/__pycache__/
 **/*.pyc
+src/cpp/hcp_solver
