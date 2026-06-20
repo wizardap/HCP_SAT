@@ -275,13 +275,131 @@ public:
     bool is_directed = false;
     int check_calls = 0;
 
+    // Active propagator tracking
+    vector<int> next_of;
+    struct AssignmentChange {
+        int u;
+        int prev_val;
+    };
+    vector<vector<AssignmentChange>> level_stack;
+    int current_level = 0;
+
+    // Stats
+    long long num_assignments = 0;
+    long long num_backtracks = 0;
+    long long num_levels = 0;
+    long long num_subcycles_found = 0;
+
     HCPPropagator(int n, bool directed) : N(n), is_directed(directed) {
-        this->is_lazy = true;
+        this->is_lazy = false; // Set to false for active propagation!
+        next_of.assign(N + 1, 0);
+        level_stack.resize(1); // Level 0 exists initially
+        current_level = 0;
     }
 
-    void notify_assignment (int lit, bool is_fixed) override {}
-    void notify_new_decision_level () override {}
-    void notify_backtrack (size_t new_level) override {}
+    ~HCPPropagator() override {
+        cerr << "[C++ Propagator] Summary: assignments=" << num_assignments 
+             << " backtracks=" << num_backtracks 
+             << " levels=" << num_levels 
+             << " subcycles=" << num_subcycles_found << endl;
+    }
+
+    void notify_new_decision_level () override {
+        num_levels++;
+        current_level++;
+        if (current_level >= (int)level_stack.size()) {
+            level_stack.resize(current_level + 1);
+        }
+    }
+
+    void notify_backtrack (size_t new_level) override {
+        num_backtracks++;
+        while (current_level > (int)new_level) {
+            if (current_level < (int)level_stack.size()) {
+                for (auto it = level_stack[current_level].rbegin(); it != level_stack[current_level].rend(); ++it) {
+                    next_of[it->u] = it->prev_val;
+                }
+                level_stack[current_level].clear();
+            }
+            current_level--;
+        }
+        if (level_stack.size() > new_level + 1) {
+            level_stack.resize(new_level + 1);
+        }
+        
+        // Clear pending clauses on backtrack
+        while (!pending_clauses.empty()) {
+            pending_clauses.pop();
+        }
+        clause_idx = 0;
+    }
+
+    void notify_assignment (int lit, bool is_fixed) override {
+        if (lit > 0) {
+            int abs_lit = abs(lit);
+            if (var_to_edge.count(abs_lit)) {
+                num_assignments++;
+                Edge e = var_to_edge[abs_lit];
+                int u = e.u;
+                int v = e.v;
+
+                if (current_level >= (int)level_stack.size()) {
+                    level_stack.resize(current_level + 1);
+                }
+
+                int prev_val = next_of[u];
+                level_stack[current_level].push_back({u, prev_val});
+                next_of[u] = v;
+
+                // Trace path from v to see if it reaches u
+                int curr = v;
+                int steps = 0;
+                vector<int> cycle_vertices;
+                cycle_vertices.push_back(u);
+
+                while (curr != 0 && steps <= N) {
+                    cycle_vertices.push_back(curr);
+                    if (curr == u) {
+                        break;
+                    }
+                    curr = next_of[curr];
+                    steps++;
+                }
+
+                // If a cycle is detected and its length is less than N, it's a subcycle!
+                if (curr == u && (int)cycle_vertices.size() - 1 < N) {
+                    num_subcycles_found++;
+                    vector<int> clause_cw;
+                    for (size_t i = 0; i < cycle_vertices.size() - 1; ++i) {
+                        int su = cycle_vertices[i];
+                        int sv = cycle_vertices[i+1];
+                        auto it = edge_to_var.find({su, sv});
+                        if (it != edge_to_var.end()) {
+                            clause_cw.push_back(-it->second);
+                        }
+                    }
+                    if (!clause_cw.empty()) {
+                        pending_clauses.push(clause_cw);
+                    }
+
+                    if (!is_directed) {
+                        vector<int> clause_ccw;
+                        for (size_t i = 0; i < cycle_vertices.size() - 1; ++i) {
+                            int su = cycle_vertices[i];
+                            int sv = cycle_vertices[i+1];
+                            auto it = edge_to_var.find({sv, su});
+                            if (it != edge_to_var.end()) {
+                                clause_ccw.push_back(-it->second);
+                            }
+                        }
+                        if (!clause_ccw.empty()) {
+                            pending_clauses.push(clause_ccw);
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     bool cb_check_found_model (const std::vector<int> &model) override {
         check_calls++;

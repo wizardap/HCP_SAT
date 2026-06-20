@@ -120,7 +120,7 @@ class HcpSolver:
                     cpp_H[(i, j)] = next_var
                     next_var += 1
             def getH_override(i, j):
-                return cpp_H.get((i, j), -1)
+                return cpp_H.get((i, j), None)
             self.successor.getH = getH_override
         else:
             print(f"Running C++ SAT Solver (DIMACS Fallback for {successor_name})...")
@@ -219,14 +219,15 @@ class HcpSolver:
                     cpp_H[(i, j)] = next_var
                     next_var += 1
             def getH_local(i, j):
-                return cpp_H.get((i, j), -1)
+                return cpp_H.get((i, j), None)
             getH = getH_local
 
         model_set = set(model)
         HCP = []
         for i in range(1, N + 1):
-            for j in range(1, N + 1):
-                if getH(i, j) in model_set:
+            for j in self.graph.graph[i]:
+                val = getH(i, j)
+                if val is not None and val in model_set:
                     HCP.append((i, j))
 
         print("Hamiltonian cycle:", end=" ")
