@@ -5,7 +5,7 @@
 from pysat.solvers import Solver, Cadical195
 import time
 
-sat_solver: Solver = Cadical195()
+sat_solver: Solver = Cadical195(verbose=1)
 
 with open("src/utils/all_cadical/input.txt", 'r') as lines:
     for line in lines:
