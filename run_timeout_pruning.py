@@ -116,13 +116,11 @@ def run_single_timeout_benchmark(graph_path, seed, timeout=600):
 def main():
     parser = argparse.ArgumentParser(description="Run PruningCRT on timeout HCP graphs.")
     parser.add_argument("--timeout", type=int, default=600, help="Timeout limit for CaDiCaL in seconds (default: 600).")
-    parser.add_argument("--seeds", type=int, default=10, help="Number of seeds to run (default: 10).")
+    parser.add_argument("--seeds", type=int, default=1, help="Number of seeds to run (default: 1).")
     args = parser.parse_args()
     
     timeout_graphs = [
-        "src/data/fhcppp/graph424.hcp",
-        "src/data/fhcppp/graph446.hcp",
-        "src/data/fhcppp/graph470.hcp"
+        "src/data/fhcppp/graph424.hcp"
     ]
     
     # Check that paths exist
