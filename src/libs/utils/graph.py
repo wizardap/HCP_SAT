@@ -18,6 +18,7 @@ class Graph:
         self.start_vertex = start_vertex
 
     def load_graph_from_file(self, url):
+        self.filename = url
         # Normalize slashes to handle cross-platform file paths
         normalized_url = url.replace("\\", "/")
         parts = normalized_url.split('/')

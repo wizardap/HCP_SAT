@@ -20,58 +20,32 @@ def run_single_benchmark(graph_path, model_class, seed, timeout=300):
     random.seed(seed)
     
     enc = NSCEncoding()
-    solver = HcpSolver(model_class(enc), enc)
+    
+    # Dynamically override global TIME_BUDGET
+    import solver as solver_mod
+    original_timeout = solver_mod.TIME_BUDGET
+    solver_mod.TIME_BUDGET = timeout
+    
+    from solver import IncHcpSolver, HcpSolver
+    if model_class.__name__ in ["IncCRT", "IncOCRT"]:
+        solver = IncHcpSolver(model_class(enc), enc)
+    else:
+        solver = HcpSolver(model_class(enc), enc)
+        
     solver.graph.load_graph_from_file(graph_path)
     
-    # Build clauses
-    solver.successor.build_clauses(solver.context, solver.graph)
-    cnf = solver.context.cnf.clauses
+    # Run the native C++ solver
+    solve_res = solver.solve_cadical(seed=seed)
     
-    # Shuffle clauses using the seed
-    random.shuffle(cnf)
+    # Restore global timeout
+    solver_mod.TIME_BUDGET = original_timeout
+
+    t_solve = solve_res["time"]
+    status = solve_res["status"]
+    model = solve_res["model"]
+    nof_vars = solve_res["nofVariables"]
+    nof_clauses = solve_res["nofClauses"]
     
-    nof_vars = solver.context.total_vars()
-    nof_clauses = len(cnf)
-    
-    input_file = 'src/utils/all_cadical/input.txt'
-    output_file = 'src/utils/all_cadical/output.txt'
-    report_file = 'src/utils/all_cadical/report.txt'
-    
-    # Clean up old files
-    for f in [input_file, output_file, report_file]:
-        if os.path.exists(f):
-            os.remove(f)
-            
-    os.makedirs(os.path.dirname(input_file), exist_ok=True)
-    
-    with open(input_file, 'w') as writer:
-        for clause in cnf:
-            writer.write(" ".join(map(str, clause)) + "\n")
-            
-    # Run cadical under runlim
-    t0 = time.time()
-    # Adding +2s margin to runlim limit
-    bashCommand = f"./src/utils/all_cadical/runlim -r {timeout + 2} -o {report_file} {sys.executable} src/utils/all_cadical/cadical.py > /dev/null 2>&1"
-    os.system(bashCommand)
-    
-    t_solve = time.time() - t0
-    status = "UNKNOWN"
-    model = None
-    
-    try:
-        with open(output_file, 'r') as f:
-            lines = f.readlines()
-        if len(lines) > 1 and lines[0].strip() != "-1":
-            t_solve = float(lines[1].strip())
-            status = "SAT" if lines[0].strip() == "1" else "UNSAT"
-            model = list(map(int, lines[2].split()))
-        else:
-            status = "TIMEOUT"
-            t_solve = float(timeout)
-    except Exception:
-        status = "TIMEOUT"
-        t_solve = float(timeout)
-        
     # Verify the cycle if SAT
     verification = "None"
     if status == "SAT" and model is not None:
@@ -84,10 +58,6 @@ def run_single_benchmark(graph_path, model_class, seed, timeout=300):
                     HCP.append((i, j))
         success, msg = verify_hamiltonian_cycle(HCP, solver.graph.graph, N)
         verification = "valid" if success else "None"
-    elif status == "UNSAT":
-        verification = "None"
-    else:
-        verification = "None"
         
     # Setup seed directory structure: benchmark/experiment/sub-cycle/seed_{seed}/
     graph_name = os.path.basename(graph_path)
@@ -98,27 +68,26 @@ def run_single_benchmark(graph_path, model_class, seed, timeout=300):
     dest_output = os.path.join(seed_dir, f"{graph_name}_{model_name}_output.txt")
     dest_report = os.path.join(seed_dir, f"{graph_name}_{model_name}_report.txt")
     
-    if os.path.exists(output_file):
-        shutil.copy(output_file, dest_output)
-    else:
-        with open(dest_output, "w") as f_out:
+    # Write solver output file
+    with open(dest_output, "w") as f_out:
+        if status == "SAT" and model is not None:
+            f_out.write(f"1\n{t_solve}\n" + " ".join(map(str, model)) + "\n")
+        elif status == "UNSAT":
+            f_out.write(f"0\n{t_solve}\n")
+        else:
             f_out.write(f"-1\n{t_solve}\n")
             
-    if os.path.exists(report_file):
-        shutil.copy(report_file, dest_report)
+    # Write mockup runlim report file
+    with open(dest_report, "w") as f_rep:
+        f_rep.write(f"[runlim] time: {t_solve:.6f} seconds\n")
+        f_rep.write(f"[runlim] status: {status}\n")
         
-    # Write to seed-specific log-file.txt (acts like the original log-file.txt for this seed)
+    # Write to seed-specific log-file.txt
     log_file_path = os.path.join(seed_dir, "log-file.txt")
     with open(log_file_path, "a") as f_log:
-        # Include successor name in the filename field to distinguish the two solvers
         run_name = f"{graph_name}_{model_name}"
         f_log.write(f"{run_name.ljust(30)} {str(nof_vars).ljust(10)} {str(nof_clauses).ljust(10)} {status.ljust(10)}  {str(t_solve).ljust(10)} {verification.ljust(10)}\n")
         
-    # Clean up temporary run files
-    for f in [input_file, output_file, report_file]:
-        if os.path.exists(f):
-            os.remove(f)
-            
     return t_solve, status
 
 def main():
