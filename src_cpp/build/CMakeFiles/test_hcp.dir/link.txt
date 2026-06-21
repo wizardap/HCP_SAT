@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/test_hcp.dir/link.d CMakeFiles/test_hcp.dir/test_hcp.cpp.o CMakeFiles/test_hcp.dir/solver.cpp.o -o test_hcp  -lcadical

@@ -1,0 +1,4 @@
+graph48.hcp                   120666    9528343   SAT       112.438   
+graph48.hcp                   3620      25311     TIMEOUT   180.081   
+graph48.hcp                   116312    138003    TIMEOUT   180.029   
+graph424.hcp                  19504     120952    TIMEOUT   180.092   

@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/compare_successors.dir/link.d CMakeFiles/compare_successors.dir/compare_successors.cpp.o CMakeFiles/compare_successors.dir/solver.cpp.o -o compare_successors  -lcadical

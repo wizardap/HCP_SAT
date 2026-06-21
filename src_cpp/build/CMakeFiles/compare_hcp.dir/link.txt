@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/compare_hcp.dir/link.d CMakeFiles/compare_hcp.dir/compare_hcp.cpp.o CMakeFiles/compare_hcp.dir/solver.cpp.o -o compare_hcp  -lcadical
